@@ -1,1 +1,1 @@
-# the-vinyl-collection
+# my-vinyl-collection
