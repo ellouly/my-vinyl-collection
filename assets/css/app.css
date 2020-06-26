@@ -1,3 +1,10 @@
+@import url(https://fonts.googleapis.com/css2?family=Averia+Sans+Libre&family=Love+Ya+Like+A+Sister&family=Oswald&display=swap);
+
 body {
-    background-color: lightgray;
+    background-color: #707F8C;
+}
+
+h1 {
+    color: #F27405;
+    font-family: 'Love Ya Like A Sister', cursive;
 }
