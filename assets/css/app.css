@@ -1,10 +1,30 @@
 @import url(https://fonts.googleapis.com/css2?family=Averia+Sans+Libre&family=Love+Ya+Like+A+Sister&family=Oswald&display=swap);
 
+/* général */
+* {
+    padding:0;
+    margin:0;
+}
+
 body {
-    background-color: #707F8C;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(135deg, #212626 40%,#F27405);
 }
 
 h1 {
-    color: #F27405;
+    color: whitesmoke;
     font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 80px;
+    text-align: center;
+    padding: 80px;
+}
+
+.home-vinyl {
+    text-align: center;
+}
+
+.vinyl {
+    width: 40px;
+    height: 40px;
 }
