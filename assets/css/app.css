@@ -13,6 +13,14 @@ body {
     background-repeat: no-repeat;
 }
 
+h1 {
+    color: #8FA2B3;
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 60px;
+    text-align: center;
+    padding: 80px;
+}
+
 /* Home page */
 
 .home-title {
@@ -56,9 +64,7 @@ body {
 }
 
 .container {
-    background: #8FA2B3;
-    display: flex;
-    flex-direction: column;
+    background: ghostwhite;
     justify-content: center;
     align-content: center;
 }

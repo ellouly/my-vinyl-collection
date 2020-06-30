@@ -23,7 +23,7 @@ class AlbumController extends AbstractController
      */
     public function index(AlbumRepository $albumRepository): Response
     {
-        return $this->render('album/index.html.twig', [
+        return $this->render('album/index.jukebox.html.twig', [
             'albums' => $albumRepository->findAll(),
         ]);
     }
