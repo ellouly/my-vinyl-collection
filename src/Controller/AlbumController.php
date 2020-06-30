@@ -12,11 +12,14 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/album")
+ *
  */
 class AlbumController extends AbstractController
 {
     /**
-     * @Route("/", name="album_index", methods={"GET"})
+     * @Route("/index", name="album_index", methods={"GET"})
+     * @param AlbumRepository $albumRepository
+     * @return Response
      */
     public function index(AlbumRepository $albumRepository): Response
     {

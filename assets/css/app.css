@@ -1,30 +1,64 @@
 @import url(https://fonts.googleapis.com/css2?family=Averia+Sans+Libre&family=Love+Ya+Like+A+Sister&family=Oswald&display=swap);
 
-/* général */
+/* Global */
 * {
     padding:0;
     margin:0;
 }
 
 body {
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(135deg, #212626 40%,#F27405);
+    height: 100vh;
+    background: linear-gradient(135deg, #212626 40%,#F27405) ;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-h1 {
-    color: whitesmoke;
+/* Home page */
+
+.home-title {
+    color: #8FA2B3;
     font-family: 'Love Ya Like A Sister', cursive;
-    font-size: 80px;
+    font-size: 60px;
     text-align: center;
     padding: 80px;
 }
 
 .home-vinyl {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
 }
 
 .vinyl {
-    width: 40px;
-    height: 40px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vinyl img {
+    width: 650px;
+    height: 650px;
+}
+
+.home-footer {
+    font-size: 150px;
+    padding: 0px 30px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-footer a {
+    color: #8FA2B3;
+}
+
+.container {
+    background: #8FA2B3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 }

@@ -1,8 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div>
-        <h1>MY VINYL COLLECTION</h1>
-        <div class="home-vinyl"><img src="{{ asset('build/Disque_Vinyl.svg') }}" class="vinyl"></div>
+    <div class="home-vinyl">
+        <div class="home-title">
+            <h1>MY VINYL COLLECTION</h1>
+        </div>
+
+        <div class="vinyl">
+            <img src="{{ asset('build/Disque_Vinyl.svg') }}">
+        </div>
+
+        <div class="home-footer">
+            <a href="/album/index"><i class="las la-images"></i></a>
+            <a href="/search"><i class="las la-headphones-alt"></i></a>
+        </div>
     </div>
 {% endblock %}
