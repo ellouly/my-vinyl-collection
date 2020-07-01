@@ -7,12 +7,12 @@
         </div>
 
         <div class="vinyl">
-            <img src="{{ asset('build/discos-de-acetato-png-5.png') }}">
+            <a href="{{ path('album_index') }}"><img src="{{ asset('build/discos-de-acetato-png-5.png') }}"></a>
         </div>
 
         <div class="home-footer">
-            <a href="/album/index"><i class="las la-images"></i></a>
-            <a href="/search"><i class="las la-headphones-alt"></i></a>
+            <a href="{{ path('search') }}"><i class="las la-images"></i></a>
+            <a href="{{ path('record_dealer') }}"><i class="las la-headphones-alt"></i></a>
         </div>
     </div>
 {% endblock %}

@@ -4,11 +4,11 @@
 
 {% block body %}
 <div class="container">
-    <div>
+    <div class="jukebox-title">
         <h1>JUKEBOX</h1>
     </div>
     <div>
-        <table class="table">
+        <table class="table text-light">
             <thead>
             <tr>
                 <th>Nom</th>
@@ -39,7 +39,14 @@
             {% endfor %}
             </tbody>
         </table>
+        <div>
+            <a class="btn btn-validate" href="{{ path('album_new') }}">Créer un nouveau</a>
+        </div>
     </div>
 </div>
-    <a href="{{ path('album_new') }}">Create new</a>
-    {% endblock %}
+
+    <div class="home-footer">
+        <a href="{{ path('search') }}"><i class="las la-images"></i></a>
+        <a href="{{ path('record_dealer') }}"><i class="las la-headphones-alt"></i></a>
+    </div>
+{% endblock %}
