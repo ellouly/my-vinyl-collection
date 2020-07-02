@@ -35,7 +35,41 @@ td {
     border: 3px solid;
     border-color: #F29F05;
     border-radius: 30px;
-    box-shadow: 15px 15px 5px #F29F05;
+    box-shadow: 10px 10px 15px #F29F05;
+}
+
+.title {
+    color: ghostwhite;
+    font-family: 'Love Ya Like A Sister', cursive;
+    text-align: center;
+    padding: 80px;
+}
+
+.title h1 {
+    font-size: 80px;
+}
+
+.illustration {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.illustration img {
+    padding-top: 30px;
+    width: 400px;
+}
+
+.footer {
+    font-size: 150px;
+    padding: 0px 30px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer a {
+    color: #8FA2B3;
 }
 
 .btn-validate {
@@ -79,23 +113,14 @@ td {
     height: 650px;
 }
 
-.home-footer {
-    font-size: 150px;
-    padding: 0px 30px 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.home-footer a {
-    color: #8FA2B3;
-}
-
 /*Jukebox view*/
 
-.jukebox-title {
-    color: ghostwhite;
-    font-family: 'Love Ya Like A Sister', cursive;
+/*Search view*/
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin: auto;
     font-size: 60px;
     text-align: center;
-    padding: 80px;
 }
