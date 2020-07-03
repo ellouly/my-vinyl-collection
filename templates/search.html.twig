@@ -3,6 +3,7 @@
 {% block title %}Bac à vinyls{% endblock %}
 
 {% block body %}
+
     <div class="container">
         <div class="illustration">
             <img src="{{ asset('build/img_disq.png') }}">
@@ -12,12 +13,11 @@
         </div>
         <div class="row search-form">
             {{ form_start(form) }}
-            <div class="col m-5">
+            <div class="search-choice col m-5 pb-5">
                 {{ form_row(form.artist) }}
             </div>
-            <div class="col m-5">
-                {{ form_label(form.category) }}
-                {{ form_widget(form.category) }}
+            <div class="search-choice col m-5">
+                {{ form_row(form.category) }}
             </div>
             {{ form_end(form) }}
         </div>

@@ -46,7 +46,7 @@ td {
 }
 
 .title h1 {
-    font-size: 80px;
+    font-size: 90px;
 }
 
 .illustration {
@@ -86,10 +86,11 @@ td {
     font-family: 'Love Ya Like A Sister', cursive;
     text-align: center;
     padding: 80px;
+    margin-top: 100px;
 }
 
 .home-title h1 {
-    font-size: 130px;
+    font-size: 150px;
 }
 
 .home-vinyl {
@@ -119,8 +120,25 @@ td {
 
 .search-form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin: auto;
+    text-align: center;
+    width: 80%;
+    margin: 30px;
     font-size: 60px;
+}
+
+.form-group {
+    font-family: Averia Sans Libre;
+    font-size: 70px;
+}
+
+.form-control {
+    font-family: Oswald;
+    font-size: 35px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #8FA2B3;
+    color: #707F8C;
+    background-color: whitesmoke;
     text-align: center;
 }

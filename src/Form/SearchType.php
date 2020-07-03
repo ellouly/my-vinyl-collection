@@ -16,14 +16,19 @@ class SearchType extends AbstractType
     {
         $builder
             ->add('artist', EntityType::class, [
+                'label' => 'Artiste',
+                'class' => Artist::class,
                 'choice_label' => 'name',
-                'class' => Artist::class
+                'attr' => [
+                    'onchange="location = this.options[this.selectedIndex].value;"'
+                ],
+
             ])
             ->add('category', EntityType::class, [
+                'label' => 'Catégorie',
                 'choice_label' => 'name',
                 'class' => Category::class
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
