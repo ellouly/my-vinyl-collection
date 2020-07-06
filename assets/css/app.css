@@ -24,6 +24,10 @@ td {
     font-size: 20px;
 }
 
+h1 {
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
 .container {
     background: #212626;
     color: ghostwhite;
@@ -74,9 +78,10 @@ td {
 
 .btn-validate {
     border-radius: 10px;
-    box-shadow: 5px 5px 5px #8FA2B3;
-    color: #707F8C;
-    background-color: whitesmoke;
+    box-shadow: 5px 5px 5px whitesmoke;
+    color: whitesmoke;
+    background-color: #8FA2B3;
+    font-size: 40px;
 }
 
 /* Home page */
@@ -141,4 +146,32 @@ td {
     color: #707F8C;
     background-color: whitesmoke;
     text-align: center;
+}
+
+/*Search results*/
+
+.album-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    margin: 65px;
+    font-size: 60px;
+}
+
+.album-form h2 {
+    font-size: 70px;
+    font-family: 'Averia Sans Libre';
+    padding-bottom: 40px;
+}
+
+.album-form h3 {
+    font-size: 50px;
+    font-family: 'Oswald';
+    padding-bottom: 30px;
+}
+
+.album-form p {
+    font-size: 30px;
 }
