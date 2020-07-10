@@ -34,10 +34,19 @@ class AlbumController extends AbstractController
     public function new(Request $request): Response
     {
         $album = new Album();
+        $countMax = $this->getDoctrine()
+            ->getRepository(Album::class)
+            ->countAll();
         $form = $this->createForm(AlbumType::class, $album);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($countMax >= 50){
+            $this->addFlash('Warning', "Votre jukebox est plein !!");
+
+            return $this->redirectToRoute('album_index');
+        }
+
+        elseif ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($album);
             $entityManager->flush();
