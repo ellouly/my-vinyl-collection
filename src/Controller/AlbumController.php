@@ -46,7 +46,7 @@ class AlbumController extends AbstractController
             return $this->redirectToRoute('album_index');
         }
 
-        elseif ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($album);
             $entityManager->flush();
