@@ -7,32 +7,23 @@
         <div class="title">
             <h1>JUKEBOX</h1>
         </div>
-        <div class="row">
+        <div class="jukebox">
+            <div class="row justify justify-content-center">
 
                 <div id="carousel-example-generic" class="carousel slide vertical carousel-form" data-ride="carousel">
 
                     <!-- Wrapper for slides -->
-                    <div class="carousel-inner m-4" role="listbox">
-                        {% for album in albums %}
-                        <div class="item active m-4">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            {% for album in albums %}
                             <a href="{{ path('album_show', {'id': album.id}) }}">
                                 <img class="img" src="{{ album.image }}" alt="Pochette album">
                             </a>
                         </div>
                         {% endfor %}
                     </div>
-                    <a class="right carousel-control" href="#carousel-example-generic" role="button"
-                       data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only"><i class="las la-arrow-circle-down"></i></span>
-                    </a>
-                    <a class="left carousel-control" href="#carousel-example-generic" role="button"
-                       data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only"><i class="las la-arrow-circle-up"></i></span>
-                    </a>
                 </div>
-
+            </div>
         </div>
     </div>
 
