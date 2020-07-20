@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Album;
 use App\Form\AlbumType;
 use App\Repository\AlbumRepository;
+use App\Service\SpotifyService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,8 +22,9 @@ class AlbumController extends AbstractController
      * @param AlbumRepository $albumRepository
      * @return Response
      */
-    public function index(AlbumRepository $albumRepository): Response
+    public function index(AlbumRepository $albumRepository, SpotifyService $spotifyService): Response
     {
+        $spotifyService->authenticate();
         return $this->render('album/index.jukebox.html.twig', [
             'albums' => $albumRepository->findAll(),
         ]);
@@ -31,7 +33,7 @@ class AlbumController extends AbstractController
     /**
      * @Route("/new", name="album_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, SpotifyService $spotify): Response
     {
         $album = new Album();
         $countMax = $this->getDoctrine()
