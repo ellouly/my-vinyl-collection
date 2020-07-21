@@ -6,9 +6,9 @@ My Vinyl collection is a repository created as subject for my professional title
 It's a web application that allows you to select a list of 50 favorite vinyls, then choose them and listen to them like on a jukebox.
 
 Skills :  
-HTML5, CSS3, SCSS, Bootstrap,  
-PHP, Doctrine,  
-Symfony 4, Webpack Encore
+HTML5, CSS3, Bootstrap,  
+PHP7, Doctrine,  
+Symfony 5, Webpack Encore
 
 Here is the wireframe edited with MokeFlow:
 
