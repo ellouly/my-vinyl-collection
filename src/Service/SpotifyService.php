@@ -22,8 +22,6 @@ class SpotifyService
             ],
             'body' => ['grant_type' => 'client_credentials'],
         ]);
-        dump($response);
-        dump($response->getContent());
     }
 
 }
