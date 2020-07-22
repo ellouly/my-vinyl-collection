@@ -99,18 +99,6 @@ th {
 
 /* Home page */
 
-.count {
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px #8FA2B3;
-    color: #8FA2B3;
-    background-color: #212626;
-    font-size: 100px;
-    text-align: center;
-    width: 20%;
-    margin: auto;
-    font-family: 'Love Ya Like A Sister', cursive;
-}
-
 .home-title {
     color: #8FA2B3;
     font-family: 'Love Ya Like A Sister', cursive;
@@ -208,6 +196,18 @@ th {
 .carousel.vertical .next.left,
 .carousel.vertical .prev.right {
     top: 0;
+}
+
+.count {
+    border-radius: 190px;
+    box-shadow: 5px 5px 10px #8FA2B3;
+    color: #8FA2B3;
+    background-color: #212626;
+    font-size: 100px;
+    text-align: center;
+    width: 20%;
+    margin: auto;
+    font-family: 'Love Ya Like A Sister', cursive;
 }
 
 .img {

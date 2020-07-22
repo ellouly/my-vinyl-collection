@@ -26,13 +26,11 @@
             </div>
         </div>
     </div>
-<!--
-    <div class="count">
-        {{ albums }}
-    </div>
-    -->
     <div class="footer">
         <a href="{{ path('search') }}"><i class="las la-images"></i></a>
+        <div class="count">
+            {{ amount }}
+        </div>
         <a href="{{ path('record_dealer') }}"><i class="las la-headphones-alt"></i></a>
     </div>
 {% endblock %}

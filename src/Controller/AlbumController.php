@@ -22,11 +22,15 @@ class AlbumController extends AbstractController
      * @param AlbumRepository $albumRepository
      * @return Response
      */
-    public function index(AlbumRepository $albumRepository, SpotifyService $spotifyService): Response
+    public function index(AlbumRepository $albumRepository): Response
     {
-        $spotifyService->authenticate();
+       $albumsAmount = $this->getDoctrine()
+            ->getRepository(Album::class)
+            ->countAll();
+
         return $this->render('album/index.jukebox.html.twig', [
             'albums' => $albumRepository->findAll(),
+            'amount' => $albumsAmount
         ]);
     }
 

@@ -17,8 +17,7 @@ class HomeController extends AbstractController
     public function index() :Response
     {
         $albums = $this->getDoctrine()
-            ->getRepository(Album::class)
-            ->countAll();
+            ->getRepository(Album::class);
 
         return $this->render('home.html.twig', [
             'albums' => $albums
