@@ -3,5 +3,28 @@
 {% block title %}Disquaire{% endblock %}
 
 {% block body %}
+    <div class="container">
+        <div class="title">
+            <h1>DISQUAIRE</h1>
+        </div>
+        <div class="illustration">
+            <img src="{{ asset('build/Disquaire2.png') }}" alt="Record dealer">
+        </div>
+        <div class="row search-form">
+            {{ form_start(form) }}
+            <div class="search-choice col m-5">
+                {{ form_widget(form) }}
+            </div>
+            {{ form_end(form) }}
+            <div>
+                <button>{{ button_label|default('Chiner') }}</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="{{ path('search') }}"><i class="las la-images"></i></a>
+        <a href="{{ path('album_index') }}"><i class="las la-record-vinyl"></i></a>
+    </div>
+
 
 {% endblock %}

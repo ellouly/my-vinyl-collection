@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Album;
 use App\Form\AlbumType;
+use App\Form\RecordDealerType;
 use App\Repository\AlbumRepository;
 use App\Service\SpotifyService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -29,22 +30,19 @@ class AlbumController extends AbstractController
             ->countAll();
 
         return $this->render('album/index.jukebox.html.twig', [
-            'albums' => $albumRepository->findAll(),
+            'albums' => $albumRepository->findAll()->sortByArtist(),
             'amount' => $albumsAmount
         ]);
     }
 
     /**
-     * @Route("/new", name="album_new", methods={"GET","POST"})
+     * @Route("/record", name="record_dealer", methods={"GET","POST"})
      */
-    public function new(Request $request, SpotifyService $spotify): Response
+    public function recordDealer(Request $request, SpotifyService $spotify): Response
     {
-        $album = new Album();
         $countMax = $this->getDoctrine()
             ->getRepository(Album::class)
             ->countAll();
-        $form = $this->createForm(AlbumType::class, $album);
-        $form->handleRequest($request);
 
         if ($countMax >= 50){
             $this->addFlash('Warning', "Votre jukebox est plein !!");
@@ -52,7 +50,12 @@ class AlbumController extends AbstractController
             return $this->redirectToRoute('album_index');
         }
 
+        $form = $this->createForm(RecordDealerType::class);
+        $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
+            $authentication = $spotify->authenticate();
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($album);
             $entityManager->flush();

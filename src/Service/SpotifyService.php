@@ -15,7 +15,7 @@ class SpotifyService
 
     public function authenticate ()
     {
-        $response =$this->client->request('POST', 'https://accounts.spotify.com/api/token', [
+        $response = $this->client->request('POST', 'https://accounts.spotify.com/api/token', [
             'headers' => [
                 'Content-Type' => 'application/x-www-form-urlencoded',
                 'Authorization' => 'Basic '.base64_encode ('6f7cc388cea244669ab0c4b2f283b804:c0f43568e5e54cfc967a64229c1e0d67')
@@ -24,4 +24,8 @@ class SpotifyService
         ]);
     }
 
+    public function searchAlbum ($albumName)
+    {
+        $response = $this->client->request('GET', 'https://api.spotify.com/v1/search?type=album&q=' .$albumName);
+    }
 }
