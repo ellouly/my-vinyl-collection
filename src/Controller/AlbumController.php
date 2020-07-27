@@ -36,7 +36,7 @@ class AlbumController extends AbstractController
     }
 
     /**
-     * @Route("/record", name="record_dealer", methods={"GET","POST"})
+     * @Route("/record", name="album_record_dealer", methods={"GET","POST"})
      */
     public function recordDealer(Request $request, SpotifyService $spotify): Response
     {
@@ -53,8 +53,9 @@ class AlbumController extends AbstractController
         $form = $this->createForm(RecordDealerType::class);
         $form->handleRequest($request);
 
+        $authentication = $spotify->authenticate();
+
         if ($form->isSubmitted() && $form->isValid()) {
-            $authentication = $spotify->authenticate();
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($album);
