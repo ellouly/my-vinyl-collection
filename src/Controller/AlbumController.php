@@ -30,7 +30,7 @@ class AlbumController extends AbstractController
             ->countAll();
 
         return $this->render('album/index.jukebox.html.twig', [
-            'albums' => $albumRepository->findAll()->sortByArtist(),
+            'albums' => $albumRepository->sortByArtist(),
             'amount' => $albumsAmount
         ]);
     }
@@ -57,15 +57,17 @@ class AlbumController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            $newAlbum = $this->searchAlbum();
+
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($album);
+            $entityManager->persist($newAlbum);
             $entityManager->flush();
 
             return $this->redirectToRoute('album_index');
         }
 
         return $this->render('album/new.html.twig', [
-            'album' => $album,
+            'album' => $newAlbum,
             'form' => $form->createView(),
         ]);
     }

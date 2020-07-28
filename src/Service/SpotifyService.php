@@ -12,12 +12,12 @@ class SpotifyService
     private $clientId;
     private $clientSecret;
 
-    public function __construct(HttpClientInterface $client, SessionInterface $session, $clientId, $clientSecret)
+    public function __construct(HttpClientInterface $client, SessionInterface $session, $client_id, $client_secret)
     {
         $this->client = $client;
         $this->session = $session;
-        $this->clientId = $clientId;
-        $this->clientSecret = $clientSecret;
+        $this->clientId = $client_id;
+        $this->clientSecret = $client_secret;
     }
 
     public function authenticate()
@@ -25,7 +25,7 @@ class SpotifyService
         $response = $this->client->request('POST', 'https://accounts.spotify.com/api/token', [
             'headers' => [
                 'Content-Type' => 'application/x-www-form-urlencoded',
-                'Authorization' => 'Basic ' . base64_encode('client_id:client_secret')
+                'Authorization' => 'Basic ' . base64_encode($this->clientId .':' .$this->clientSecret)
             ],
             'body' => ['grant_type' => 'client_credentials'],
         ]);
@@ -36,6 +36,9 @@ class SpotifyService
 
     public function searchAlbum($albumName)
     {
-        $response = $this->client->request('GET', 'https://api.spotify.com/v1/search?type=album&q=' . $albumName);
+        $response = $this->client->request('GET', 'https://api.spotify.com/v1/search?type=album&q=' . $albumName, [
+            'headers' => [
+                'Authorization' => 'Bearer' . $this->session->get('access-token')]
+        ]);
     }
 }

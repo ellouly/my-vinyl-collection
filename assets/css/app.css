@@ -199,13 +199,13 @@ th {
 }
 
 .count {
-    border-radius: 190px;
-    box-shadow: 5px 5px 10px #8FA2B3;
-    color: #8FA2B3;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px #F29F05;
+    color: #F29F05;
     background-color: #212626;
     font-size: 100px;
     text-align: center;
-    width: 20%;
+    width: 17%;
     margin: auto;
     font-family: 'Love Ya Like A Sister', cursive;
 }

@@ -29,7 +29,8 @@ class AlbumRepository extends ServiceEntityRepository
     public function sortByArtist()
     {
         $qb = $this->createQueryBuilder('a')
-            ->orderBy('a.artist_id', 'ASC');
+            ->leftJoin('a.artist', 'ar')
+            ->orderBy('ar.name', 'ASC');
         return $qb->getQuery()->getResult();
     }
 

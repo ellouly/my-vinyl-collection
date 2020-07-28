@@ -26,8 +26,8 @@ services:
     # spotify client identification
     App\Service\SpotifyService:
         arguments:
-            client_id: '%env(CLIENT_ID)%'
-            client_secret: '%env(CLIENT_SECRET)%'
+            $client_id: '%env(CLIENT_ID)%'
+            $client_secret: '%env(CLIENT_SECRET)%'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
