@@ -25,7 +25,7 @@ class AlbumController extends AbstractController
      */
     public function index(AlbumRepository $albumRepository): Response
     {
-       $albumsAmount = $this->getDoctrine()
+        $albumsAmount = $this->getDoctrine()
             ->getRepository(Album::class)
             ->countAll();
 
@@ -44,7 +44,7 @@ class AlbumController extends AbstractController
             ->getRepository(Album::class)
             ->countAll();
 
-        if ($countMax >= 50){
+        if ($countMax >= 50) {
             $this->addFlash('Warning', "Votre jukebox est plein !!");
 
             return $this->redirectToRoute('album_index');
@@ -53,11 +53,19 @@ class AlbumController extends AbstractController
         $form = $this->createForm(RecordDealerType::class);
         $form->handleRequest($request);
 
-        $authentication = $spotify->authenticate();
+        $newAlbum = new Album();
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $newAlbum = $this->searchAlbum();
+            $spotify->authenticate();
+            $spotify->searchAlbum();
+
+            $newAlbum->setName($response['name'])
+                ->setYear($response['release_date'])
+                ->setImage($response['images'])
+                ->setArtist($response['artists'])
+                ->setCategory($response['genres'])
+                ->setSpotifyId($response['id']);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($newAlbum);
@@ -66,9 +74,8 @@ class AlbumController extends AbstractController
             return $this->redirectToRoute('album_index');
         }
 
-        return $this->render('album/new.html.twig', [
+        return $this->render('album/show.html.twig', [
             'album' => $newAlbum,
-            'form' => $form->createView(),
         ]);
     }
 
@@ -107,7 +114,7 @@ class AlbumController extends AbstractController
      */
     public function delete(Request $request, Album $album): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$album->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $album->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($album);
             $entityManager->flush();

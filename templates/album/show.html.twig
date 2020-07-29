@@ -10,17 +10,15 @@
         <table class="table jacket">
             <tbody>
             <tr>
-                <th>Année</th>
-                <td>{{ album.year }}</td>
+                <td>{{ album.artist.name }}</td>
             </tr>
             <tr>
-                <th>Titres</th>
-                <td>{{ album.titles }}</td>
+                <td>{{ album.year }}</td>
             </tr>
             </tbody>
         </table>
         <div class="play">
-            <a href="{{ album.linkAudio }}"><i class="las la-play-circle"></i></a>
+            <iframe src="https://open.spotify.com/embed/album/id" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
     </div>
     <div class="footer">

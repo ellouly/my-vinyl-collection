@@ -35,12 +35,7 @@ class Album
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $titles;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $linkAudio;
+    private $spotifyId;
 
     /**
      * @ORM\ManyToOne(targetEntity=Artist::class, inversedBy="albums")
@@ -95,26 +90,14 @@ class Album
         return $this;
     }
 
-    public function getTitles(): ?string
+    public function getSpotifyId(): ?string
     {
-        return $this->titles;
+        return $this->spotifyId;
     }
 
-    public function setTitles(string $titles): self
+    public function setSpotifyId(string $spotifyId): self
     {
-        $this->titles = $titles;
-
-        return $this;
-    }
-
-    public function getLinkAudio(): ?string
-    {
-        return $this->linkAudio;
-    }
-
-    public function setLinkAudio(string $linkAudio): self
-    {
-        $this->linkAudio = $linkAudio;
+        $this->spotifyId = $spotifyId;
 
         return $this;
     }

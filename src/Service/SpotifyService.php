@@ -38,7 +38,7 @@ class SpotifyService
     {
         $response = $this->client->request('GET', 'https://api.spotify.com/v1/search?type=album&q=' . $albumName, [
             'headers' => [
-                'Authorization' => 'Bearer' . $this->session->get('access-token')]
+                'Authorization' => 'Bearer ' . $this->session->get('access-token')]
         ]);
     }
 }

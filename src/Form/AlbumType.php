@@ -19,8 +19,6 @@ class AlbumType extends AbstractType
             ->add('name')
             ->add('year')
             ->add('image')
-            ->add('titles')
-            ->add('linkAudio')
             ->add('artist', EntityType::class, [
                 'choice_label' => 'name',
                 'class' => Artist::class
