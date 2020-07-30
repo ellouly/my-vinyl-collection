@@ -57,8 +57,10 @@ class AlbumController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            $newAlbum = $form->getData();
             $spotify->authenticate();
-            $spotify->searchAlbum();
+            $albumName = $newAlbum->getName();
+            $response = $spotify->searchAlbum($albumName);
 
             $newAlbum->setName($response['name'])
                 ->setYear($response['release_date'])

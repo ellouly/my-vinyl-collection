@@ -20,6 +20,12 @@ class SpotifyService
         $this->clientSecret = $client_secret;
     }
 
+    /**
+     * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
+     * @throws \Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface
+     * @throws \Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface
+     * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
+     */
     public function authenticate()
     {
         $response = $this->client->request('POST', 'https://accounts.spotify.com/api/token', [
@@ -34,11 +40,23 @@ class SpotifyService
         $this->session->set('access-token', $content['access_token']);
     }
 
+    /**
+     * This method allows you to retrieve album information from Spotify and return it to the application
+     *
+     * @param $albumName string
+     * @return array|false|string
+     * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
+     * @throws \Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface
+     * @throws \Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface
+     * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
+     */
     public function searchAlbum($albumName)
     {
         $response = $this->client->request('GET', 'https://api.spotify.com/v1/search?type=album&q=' . $albumName, [
             'headers' => [
                 'Authorization' => 'Bearer ' . $this->session->get('access-token')]
         ]);
+
+        return json_encode($response->getContent(), true);
     }
 }
