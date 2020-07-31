@@ -36,7 +36,7 @@ class AlbumController extends AbstractController
     }
 
     /**
-     * @Route("/record", name="album_record_dealer", methods={"GET","POST"})
+     * @Route("/record", name="record_dealer", methods={"GET","POST"})
      */
     public function recordDealer(Request $request, SpotifyService $spotify): Response
     {
@@ -54,13 +54,11 @@ class AlbumController extends AbstractController
         $form->handleRequest($request);
 
         $newAlbum = new Album();
-
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $newAlbum = $form->getData();
+            $albumName = $form->getData()['name'];
             $spotify->authenticate();
-            $albumName = $newAlbum->getName();
-            $response = $spotify->searchAlbum($albumName);
+            $response[] = $spotify->searchAlbum($albumName);
 
             $newAlbum->setName($response['name'])
                 ->setYear($response['release_date'])
@@ -76,8 +74,8 @@ class AlbumController extends AbstractController
             return $this->redirectToRoute('album_index');
         }
 
-        return $this->render('album/show.html.twig', [
-            'album' => $newAlbum,
+        return $this->render('record_dealer.html.twig', [
+            'form' => $form->createView(),
         ]);
     }
 
