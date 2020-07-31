@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Album;
 use App\Form\AlbumType;
+use App\Form\RecordDealerType;
 use App\Repository\AlbumRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,8 +24,13 @@ class AlbumController extends AbstractController
      */
     public function index(AlbumRepository $albumRepository): Response
     {
+        $albumsAmount = $this->getDoctrine()
+            ->getRepository(Album::class)
+            ->countAll();
+
         return $this->render('album/index.jukebox.html.twig', [
-            'albums' => $albumRepository->findAll(),
+            'albums' => $albumRepository->sortByArtist(),
+            'amount' => $albumsAmount
         ]);
     }
 
@@ -33,18 +39,19 @@ class AlbumController extends AbstractController
      */
     public function new(Request $request): Response
     {
-        $album = new Album();
         $countMax = $this->getDoctrine()
             ->getRepository(Album::class)
             ->countAll();
-        $form = $this->createForm(AlbumType::class, $album);
-        $form->handleRequest($request);
 
         if ($countMax >= 50){
             $this->addFlash('Warning', "Votre jukebox est plein !!");
 
             return $this->redirectToRoute('album_index');
         }
+
+        $album = new Album();
+        $form = $this->createForm(RecordDealerType::class);
+        $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
