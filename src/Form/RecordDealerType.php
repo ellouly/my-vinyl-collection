@@ -12,8 +12,8 @@ class RecordDealerType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class, [
-                'label' => "Nom de l'album",
+            ->add('password', TextType::class, [
+                'label' => "Mot de passe",
             ]);
     }
 

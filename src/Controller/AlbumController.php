@@ -50,7 +50,7 @@ class AlbumController extends AbstractController
         }
 
         $album = new Album();
-        $form = $this->createForm(RecordDealerType::class);
+        $form = $this->createForm(AlbumType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

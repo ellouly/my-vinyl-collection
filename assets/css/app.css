@@ -3,20 +3,19 @@
 /* Global */
 
 * {
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
 }
 
 body {
     height: 100vh;
-    background: linear-gradient(135deg, #212626 40%, #F27405) ;
+    background: linear-gradient(135deg, #212626 40%, #F27405);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-th {
-    font-family: 'Oswald';
-    font-size: 30px;
+h1 {
+    font-family: 'Love Ya Like A Sister', cursive;
 }
 
 td {
@@ -24,8 +23,17 @@ td {
     font-size: 30px;
 }
 
-h1 {
-    font-family: 'Love Ya Like A Sister', cursive;
+th {
+    font-family: 'Oswald';
+    font-size: 30px;
+}
+
+.btn-validate {
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px whitesmoke;
+    color: whitesmoke;
+    background-color: #8FA2B3;
+    font-size: 40px;
 }
 
 .container {
@@ -33,6 +41,7 @@ h1 {
     color: ghostwhite;
     justify-content: center;
     align-content: center;
+    position: relative;
     width: 80%;
     height: 80%;
     margin: 70px auto;
@@ -42,15 +51,27 @@ h1 {
     box-shadow: 10px 10px 15px #F29F05;
 }
 
-.title {
-    color: ghostwhite;
-    font-family: 'Love Ya Like A Sister', cursive;
-    text-align: center;
-    padding: 80px;
+.play a {
+    font-size: 300px;
+    color: #F29F05;
+    position: absolute;
+    bottom: 0;
+    margin: 0 200px;
 }
 
-.title h1 {
-    font-size: 90px;
+.footer {
+    font-size: 150px;
+    padding: 0px 30px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer a {
+    color: #8FA2B3;
+}
+
+.footer button {
+    color: #8FA2B3;
 }
 
 .illustration {
@@ -65,23 +86,15 @@ h1 {
     width: 400px;
 }
 
-.footer {
-    font-size: 150px;
-    padding: 0px 30px 20px;
-    display: flex;
-    justify-content: space-between;
+.title {
+    color: ghostwhite;
+    font-family: 'Love Ya Like A Sister', cursive;
+    text-align: center;
+    padding: 60px;
 }
 
-.footer a {
-    color: #8FA2B3;
-}
-
-.btn-validate {
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px whitesmoke;
-    color: whitesmoke;
-    background-color: #8FA2B3;
-    font-size: 40px;
+.title h1 {
+    font-size: 90px;
 }
 
 /* Home page */
@@ -119,36 +132,109 @@ h1 {
     height: 650px;
 }
 
-.count {
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px #8FA2B3;
-    color: #8FA2B3;
-    background-color: #212626;
-    font-size: 100px;
-    text-align: center;
-    width:20%;
-    margin: auto;
-    font-family: 'Love Ya Like A Sister', cursive;
-}
+/*Jukebox*/
 
-/*Jukebox view*/
-
-/*Search view*/
-
-.search-form {
+.carousel-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     width: 80%;
-    margin: 30px;
-    font-size: 60px;
+    font-size: 40px;
 }
 
-.form-group {
-    font-family: Averia Sans Libre;
-    font-size: 70px;
+.carousel.vertical .active {
+    top: 0;
 }
+
+.carousel.vertical .active img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.carousel.vertical .active.left {
+    top: -400px;
+}
+
+.carousel.vertical .active.right {
+    top: 400px;
+}
+
+.carousel.vertical .carousel-control {
+    width: 100%;
+    bottom: inherit;
+    top: inherit;
+}
+
+.carousel.vertical .carousel-control.left {
+    top: 0;
+}
+
+.carousel.vertical .item {
+    -webkit-transition: 0.6s ease-in-out top;
+    -moz-transition: 0.6s ease-in-out top;
+    -ms-transition: 0.6s ease-in-out top;
+    -o-transition: 0.6s ease-in-out top;
+    transition: 0.6s ease-in-out top;
+}
+
+.carousel.vertical .item {
+    left: 0;
+}
+
+.carousel.vertical .next {
+    top: 400px;
+}
+
+.carousel.vertical .prev {
+    top: -400px;
+}
+
+.carousel.vertical .next.left,
+.carousel.vertical .prev.right {
+    top: 0;
+}
+
+.count {
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px #F29F05;
+    color: #F29F05;
+    background-color: #212626;
+    font-size: 100px;
+    text-align: center;
+    width: 17%;
+    margin: auto;
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
+.img {
+    width: 390px;
+    height: 390px;
+    margin: 20px;
+}
+
+.jacket {
+    color: whitesmoke;
+}
+
+.jukebox {
+    justify-content: center;
+    align-content: center;
+    width: 80%;
+    height: 80%;
+    margin: 60px auto;
+    overflow: scroll;
+}
+
+.vertical .carousel-inner {
+    height: 100%;
+}
+
+/*Record dealer*/
+
+/*Search view*/
 
 .form-control {
     font-family: Oswald;
@@ -158,6 +244,21 @@ h1 {
     color: #707F8C;
     background-color: whitesmoke;
     text-align: center;
+}
+
+.form-group {
+    font-family: Averia Sans Libre;
+    font-size: 70px;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    margin: 30px;
+    font-size: 60px;
 }
 
 /*Search results*/
