@@ -18,19 +18,29 @@ use Symfony\Component\Routing\Annotation\Route;
 class AlbumController extends AbstractController
 {
     /**
-     * @Route("/index", name="album_index", methods={"GET"})
+     * @Route("/jukebox", name="album_jukebox", methods={"GET"})
      * @param AlbumRepository $albumRepository
      * @return Response
      */
-    public function index(AlbumRepository $albumRepository): Response
+    public function jukebox(AlbumRepository $albumRepository): Response
     {
         $albumsAmount = $this->getDoctrine()
             ->getRepository(Album::class)
             ->countAll();
 
-        return $this->render('album/index.jukebox.html.twig', [
+        return $this->render('album/jukebox.html.twig', [
             'albums' => $albumRepository->sortByArtist(),
             'amount' => $albumsAmount
+        ]);
+    }
+
+    /**
+     * @Route("/", name="album_index", methods={"GET"})
+     */
+    public function index(AlbumRepository $albumRepository): Response
+    {
+        return $this->render('album/index.html.twig', [
+            'albums' => $albumRepository->findAll(),
         ]);
     }
 

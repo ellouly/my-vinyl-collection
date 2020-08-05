@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des albums{% endblock %}
+
+{% block body %}
+    <div class="page-container">
+        <div class="admin-container">
+            <div class="title">
+                <h2>LISTE DES ALBUMS</h2>
+            </div>
+            <table class="table jacket">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for album in albums %}
+                    <tr>
+                        <td>{{ album.name }}</td>
+                        <td>
+                            <a href="{{ path('album_show', {'id': album.id}) }}">Afficher</a>
+                            <a href="{{ path('album_edit', {'id': album.id}) }}">Modifier</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="7">Pas d'album trouvé</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="admin-validate">
+                <a href="{{ path('album_new') }}">NOUVEL ALBUM</a>
+            </div>
+        </div>
+        <div class="footer justify-content-center">
+            <a class="nav-link" href="{{ path('app_logout') }}"><i class="las la-sign-out-alt"></i></a>
+        </div>
+    </div>
+{% endblock %}
