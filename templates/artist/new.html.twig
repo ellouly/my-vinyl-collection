@@ -1,13 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Artist{% endblock %}
+{% block title %}Nouvel Artiste{% endblock %}
 
 {% block body %}
-<div class="bg-light">
-    <h1>Create new Artist</h1>
-
-    {{ include('artist/_form.html.twig') }}
-
-    <a href="{{ path('artist_index') }}">back to list</a>
-</div>
+    <div class="page-container">
+        <div class="admin-container">
+            <div class="title">
+                <h2>NOUVEL ARTISTE</h2>
+            </div>
+            <div class="jukebox">
+                <div class="row admin-widget">
+                    {{ include('artist/_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="{{ path('search') }}"><i class="las la-images"></i></a>
+            <a href="{{ path('artist_index') }}"><i class="las la-arrow-circle-left"></i></a>
+        </div>
+    </div>
 {% endblock %}

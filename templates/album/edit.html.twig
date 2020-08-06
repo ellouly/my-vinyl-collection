@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Album{% endblock %}
+{% block title %}Modifier {{ album.name }}{% endblock %}
 
 {% block body %}
     <div class="page-container">
@@ -8,8 +8,8 @@
             <div class="title">
                 <h2>MODIFIER L'ALBUM</h2>
             </div>
-            <div class="row justify justify-content-center">
-                {{ include('album/_form.html.twig', {'button_label': 'Update'}) }}
+            <div class="row admin-widget">
+                {{ include('album/_form.html.twig', {'button_label': 'VALIDER !'}) }}
             </div>
         </div>
         <div class="footer">

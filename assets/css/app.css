@@ -80,19 +80,6 @@ th {
     height: 100vh;
 }
 
-.play a {
-    font-size: 60px;
-    text-align: center;
-    width: 17%;
-    margin: auto;
-}
-
-.play i {
-    color: #F29F05;
-    background-color: #212626;
-    border-radius: 50%;
-}
-
 .footer {
     font-size: 60px;
     padding: 0px 20px;
@@ -149,20 +136,30 @@ th {
 
 .admin-validate {
     font-family: "Averia Sans Libre", serif;
-    font-size: 15px;
+    font-size: 18px;
     border-radius: 5px;
     border: 2px solid;
     border-color: #F29F05;
     box-shadow: 2px 2px 4px #F29F05;
     background-color: whitesmoke;
     text-align: center;
-    width: 50%;
+    width: 45%;
     margin: auto;
-    margin-top: 70px;
+    margin-top: 40px;
 }
 
 .admin-validate a {
     color: #707F8C;
+}
+
+.admin-widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    margin: 30px;
+    font-size: 20px;
 }
 
 /* Home page */

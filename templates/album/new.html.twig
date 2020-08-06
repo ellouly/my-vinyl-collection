@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Album{% endblock %}
+{% block title %}Nouvel Album{% endblock %}
 
 {% block body %}
     <div class="page-container">
@@ -9,14 +9,14 @@
                 <h2>NOUVEL ALBUM</h2>
             </div>
             <div class="jukebox">
-                <div class="row justify justify-content-center">
+                <div class="row admin-widget">
                     {{ include('album/_form.html.twig') }}
                 </div>
             </div>
         </div>
         <div class="footer">
             <a href="{{ path('search') }}"><i class="las la-images"></i></a>
-            <a href="{{ path('album_index') }}"><i class="las la-record-vinyl"></i></a>
+            <a href="{{ path('album_index') }}"><i class="las la-arrow-circle-left"></i></a>
         </div>
     </div>
 {% endblock %}
