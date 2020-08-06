@@ -15,6 +15,7 @@ body {
 
 h1 {
     font-family: 'Love Ya Like A Sister', cursive;
+    border-bottom: 2px solid whitesmoke;
 }
 
 td {
@@ -68,6 +69,7 @@ th {
     border-color: #F29F05;
     border-radius: 30px;
     box-shadow: 10px 10px 15px #F29F05;
+    overflow: scroll;
 }
 
 .page-container{
@@ -191,15 +193,6 @@ th {
 
 /*Jukebox*/
 
-.carousel-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    width: 80%;
-    font-size: 40px;
-}
-
 .carousel.vertical .active {
     top: 0;
 }
@@ -267,8 +260,8 @@ th {
 }
 
 .img {
-    width: 170px;
-    height: 170px;
+    width: 150px;
+    height: 150px;
     margin: auto;
 }
 
@@ -286,10 +279,6 @@ th {
 .jukebox {
     justify-content: center;
     align-content: center;
-    width: 80%;
-    height: 80%;
-    margin: auto;
-    overflow: scroll;
 }
 
 .vertical .carousel-inner {
@@ -334,24 +323,46 @@ th {
     justify-content: center;
     text-align: center;
     width: 80%;
-    margin: 65px;
+    margin: 25px;
     font-size: 60px;
+    overflow: scroll;
 }
 
 .album-form h2 {
-    font-size: 70px;
+    font-size: 37px;
     font-family: 'Averia Sans Libre', serif;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 .album-form h3 {
-    font-size: 50px;
+    font-size: 20px;
     font-family: 'Oswald', serif;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 .album-form p {
-    font-size: 30px;
+    font-size: 15px;
+}
+
+.album-form a {
+    color: whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.container-show {
+    background: #212626;
+    color: ghostwhite;
+    justify-content: center;
+    align-content: flex-start;
+    position: relative;
+    width: 80%;
+    height: 80%;
+    margin: 70px auto 20px;
+    border: 3px solid;
+    border-color: #F29F05;
+    border-radius: 30px;
+    box-shadow: 10px 10px 15px #F29F05;
+    overflow: scroll;
 }
 
 @media only screen and (min-device-width: 768px) {

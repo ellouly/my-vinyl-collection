@@ -8,7 +8,7 @@
             <div class="title">
                 <h1>JUKEBOX</h1>
             </div>
-            <div class="jukebox search-form">
+            <div class="jukebox">
                 <div class="row justify justify-content-center">
 
                     <div id="carousel-example-generic" class="carousel slide vertical carousel-form"
@@ -18,7 +18,7 @@
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
                                 {% for album in albums %}
-                                <a href="{{ path('album_show', {'id': album.id}) }}">
+                                <a href="{{ path('album_jacket', {'id': album.id}) }}">
                                     <img class="img mb-4" src="{{ album.image }}" alt="Pochette album">
                                 </a>
                             </div>

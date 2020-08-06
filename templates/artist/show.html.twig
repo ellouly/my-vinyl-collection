@@ -3,20 +3,22 @@
 {% block title %}{{ artist.name }}{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <div class="title">
-            <h1>{{ artist.name }}</h1>
+    <div class="page-container">
+        <div class="row container-show">
+            <div class="title">
+                <h1>{{ artist.name }}</h1>
+            </div>
+            <div class="album-form">
+                <h2>Albums</h2>
+                <ul>
+                    {% for album in artist.albums %}
+                        <h3><a href="{{ path('album_show',{'id':album.id}) }}">{{ album.name }}</a></h3>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
-        <div class="album-form">
-            <h2>Albums</h2>
-            <ul>
-                {% for album in artist.albums %}
-                    <h3><a href="{{ path('album_show',{'id':album.id}) }}">{{ album.name }}</a></h3>
-                {% endfor %}
-            </ul>
+        <div class="footer justify-content-center">
+            <a href="{{ path('search') }}"><i class="las la-arrow-circle-left"></i></a>
         </div>
-    </div>
-    <div class="footer justify-content-center">
-        <a href="{{ path('search') }}"><i class="las la-arrow-circle-left"></i></a>
     </div>
 {% endblock %}

@@ -26,11 +26,9 @@
         </div>
         <div class="footer">
             <a href="{{ path('album_jukebox') }}"><i class="las la-record-vinyl"></i></a>
-            <!-- <a href="{{ path('album_edit', {'id': album.id}) }}"><i class="las la-edit"></i></a> -->
             <div class="play">
                 <a href=""><i class="las la-play-circle"></i></a>
             </div>
-            {{ include('album/_delete_form.html.twig') }}
         </div>
     </div>
 {% endblock %}

@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Album;
 use App\Form\AlbumType;
-use App\Form\RecordDealerType;
 use App\Repository\AlbumRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -39,7 +38,7 @@ class AlbumController extends AbstractController
      */
     public function index(AlbumRepository $albumRepository): Response
     {
-        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
         return $this->render('album/index.html.twig', [
             'albums' => $albumRepository->findAll(),
@@ -85,6 +84,16 @@ class AlbumController extends AbstractController
     public function show(Album $album): Response
     {
         return $this->render('album/show.html.twig', [
+            'album' => $album,
+        ]);
+    }
+
+    /**
+     * @Route("/jacket/{id}", name="album_jacket", methods={"GET"})
+     */
+    public function jacket(Album $album): Response
+    {
+        return $this->render('album/jacket.html.twig', [
             'album' => $album,
         ]);
     }
