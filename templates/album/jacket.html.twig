@@ -26,9 +26,9 @@
         </div>
         <div class="footer">
             <a href="{{ path('album_jukebox') }}"><i class="las la-record-vinyl"></i></a>
-
-                <a href=""><i class="las la-play-circle"></i></a>
-
+                <audio src="{{ album.linkAudio }}" controls>
+                </audio>
+            <a><i class="las la-play-circle"></i></a>
         </div>
     </div>
 {% endblock %}
