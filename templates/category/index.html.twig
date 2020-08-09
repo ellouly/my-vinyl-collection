@@ -12,7 +12,7 @@
                 <thead>
                 <tr>
                     <th>Nom</th>
-                    <th>Actions</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -21,7 +21,6 @@
                         <td>{{ category.name }}</td>
                         <td>
                             <a href="{{ path('category_show', {'id': category.id}) }}">Afficher</a>
-                            <a href="{{ path('category_edit', {'id': category.id}) }}">Modifier</a>
                         </td>
                     </tr>
                 {% else %}
@@ -35,7 +34,8 @@
                 <a href="{{ path('category_new') }}">NOUVELLE CATEGORIE</a>
             </div>
         </div>
-        <div class="footer justify-content-center">
+        <div class="footer">
+            <a href="{{ path('home_admin') }}"> <i class="las la-home"></i></a>
             <a class="nav-link" href="{{ path('app_logout') }}"><i class="las la-sign-out-alt"></i></a>
         </div>
     </div>

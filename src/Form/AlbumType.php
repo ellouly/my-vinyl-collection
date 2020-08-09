@@ -28,7 +28,7 @@ class AlbumType extends AbstractType
                 'label' => "Pochette"
             ])
             ->add('linkAudio', TextType::class, [
-                'label' => "Lien audio"
+                'label' => "Lien audio",
             ])
             ->add('artist', EntityType::class, [
                 'choice_label' => 'name',

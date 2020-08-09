@@ -162,6 +162,63 @@ th {
     font-size: 20px;
 }
 
+/* Home page admin*/
+
+div.vinyl{
+    animation: turn 5s linear infinite;
+    background: url(https://assets.codepen.io/141041/vinyl.png);
+    background-size: 300% 100%;
+    border: 0.2em solid black;
+    border-radius: 5em;
+    box-sizing: border-box;
+    height: 10em;
+    position: relative;
+    width: 10em;
+}
+
+div.vinyl .hole{
+    background: white;
+    border-radius: 100%;
+    height: 0.4em;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    width: 0.4em;
+}
+
+div.vinyl .label{
+    background: black;
+    border-radius: 100%;
+    height: 35%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    width: 35%;
+}
+
+section{
+    align-items: center;
+
+    flex-direction: column;
+    justify-content: center;
+}
+
+section.black div.vinyl{
+    background-position: 200% 0;
+    border-color: whitesmoke;
+    background-color: black;
+}
+
+section.black div.vinyl .hole{
+    background: black;
+}
+
+section.black div.vinyl .label{
+    background: whitesmoke;
+}
+
 /* Home page */
 
 .home-title {
@@ -177,7 +234,7 @@ th {
     border-bottom: none;
 }
 
-.vinyl {
+.home-disc {
     text-align: center;
     flex: 1;
     display: flex;
@@ -185,7 +242,7 @@ th {
     justify-content: center;
 }
 
-.vinyl img {
+.home-disc img {
     width: 250px;
     height: 250px;
 }
@@ -314,6 +371,17 @@ th {
     font-size: 20px;
 }
 
+.search-form a {
+    font-family: Oswald, serif;
+    font-size: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #8FA2B3;
+    color: #707F8C;
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 10px 50px;
+}
+
 /*Search results*/
 
 .album-form {
@@ -365,10 +433,7 @@ th {
 }
 
 @media only screen and (min-device-width: 768px) {
-    .vinyl img {
-        height: 500px;
-        width: 500px;
-    }
+
 
     .home-title h1 {
         font-size: 80px;

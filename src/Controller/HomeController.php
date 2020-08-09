@@ -16,4 +16,14 @@ class HomeController extends AbstractController
     {
         return $this->render('home.html.twig');
     }
+
+    /**
+     * @Route("/admin", name="home_admin")
+     */
+    public function homeAdmin() :Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+        return $this->render('home.admin.html.twig');
+    }
 }

@@ -18,9 +18,14 @@
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
                                 {% for album in albums %}
-                                <a href="{{ path('album_jacket', {'id': album.id}) }}">
-                                    <img class="img mb-4" src="{{ album.image }}" alt="Pochette album">
-                                </a>
+                                <audio autoplay="false" id="beep" src="">
+                                </audio>
+                                <div id="beep">
+                                    <a href="{{ path('album_jacket', {'id': album.id}) }}">
+                                        <img class="img mb-4" src="{{ album.image }}" alt="Pochette album"
+                                             onclick="PlaySound()">
+                                    </a>
+                                </div>
                             </div>
                             {% endfor %}
                         </div>
@@ -36,4 +41,13 @@
             <a href="{{ path('app_login') }}"><i class="las la-headphones-alt"></i></a>
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+    function PlaySound() {
+        var sound = document.getElementById("beep");
+        sound.play();
+    }
+</script>
 {% endblock %}

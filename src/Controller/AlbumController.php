@@ -38,7 +38,6 @@ class AlbumController extends AbstractController
      */
     public function index(AlbumRepository $albumRepository): Response
     {
-        $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
         return $this->render('album/index.html.twig', [
             'albums' => $albumRepository->findAll(),
