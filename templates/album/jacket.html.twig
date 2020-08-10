@@ -26,9 +26,22 @@
         </div>
         <div class="footer">
             <a href="{{ path('album_jukebox') }}"><i class="las la-record-vinyl"></i></a>
-                <audio src="{{ album.linkAudio }}" controls>
+            <audio autoplay="false" id="beep" src="https://lasonotheque.org/UPLOAD/mp3/0587.mp3">
+            </audio>
+            <div id="beep">
+                <a><audio src="{{ album.linkAudio }}" controls onclick="PlaySound()"><i class="las la-play-circle"></i>
                 </audio>
-            <a><i class="las la-play-circle"></i></a>
+                </a>
+            </div>
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        function PlaySound() {
+            var sound = document.getElementById("beep");
+            sound.play();
+        }
+    </script>
 {% endblock %}

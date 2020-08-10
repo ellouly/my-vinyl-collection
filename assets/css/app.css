@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Averia+Sans+Libre&family=Love+Ya+Like+A+Sister&family=Oswald&display=swap);
 
+/* -------------------------------------------- */
+/* -------------------------------------------- */
 /* Global */
 
 * {
@@ -54,6 +56,7 @@ th {
     background-color: whitesmoke;
     text-align: center;
     margin-top: 40px;
+    padding: 1px 5px;
 }
 
 .container {
@@ -117,6 +120,8 @@ th {
     font-size: 40px;
 }
 
+/* -------------------------------------------- */
+/* -------------------------------------------- */
 /* Administration*/
 
 .admin-container {
@@ -162,9 +167,12 @@ th {
     font-size: 20px;
 }
 
+/* -------------------------------------------- */
+/* -------------------------------------------- */
 /* Home page admin*/
 
 div.vinyl{
+    -webkit-animation: turn 5s linear infinite;
     animation: turn 5s linear infinite;
     background: url(https://assets.codepen.io/141041/vinyl.png);
     background-size: 300% 100%;
@@ -200,7 +208,6 @@ div.vinyl .label{
 
 section{
     align-items: center;
-
     flex-direction: column;
     justify-content: center;
 }
@@ -219,6 +226,26 @@ section.black div.vinyl .label{
     background: whitesmoke;
 }
 
+@-webkit-keyframes turn{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes turn{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
 /* Home page */
 
 .home-title {
@@ -247,6 +274,8 @@ section.black div.vinyl .label{
     height: 250px;
 }
 
+/* -------------------------------------------- */
+/* -------------------------------------------- */
 /*Jukebox*/
 
 .carousel.vertical .active {
@@ -341,8 +370,12 @@ section.black div.vinyl .label{
     height: 100%;
 }
 
+/* -------------------------------------------- */
+/* -------------------------------------------- */
 /*Record dealer*/
 
+/* -------------------------------------------- */
+/* -------------------------------------------- */
 /*Search view*/
 
 .form-control {
@@ -382,6 +415,8 @@ section.black div.vinyl .label{
     padding: 10px 50px;
 }
 
+/* -------------------------------------------- */
+/* -------------------------------------------- */
 /*Search results*/
 
 .album-form {
@@ -432,10 +467,79 @@ section.black div.vinyl .label{
     overflow: scroll;
 }
 
-@media only screen and (min-device-width: 768px) {
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* Tablet Version */
 
+@media only screen and (min-device-width: 768px) {
 
     .home-title h1 {
         font-size: 80px;
+    }
+
+    .home-disc img {
+        width: 400px;
+        height: 400px;
+    }
+
+    .count {
+        font-size: 55px;
+        width: 13%;
+    }
+
+    .title {
+        padding: 50px;
+    }
+
+    .title h1 {
+        font-size: 60px;
+    }
+
+    .title h2 {
+        font-size: 40px;
+    }
+
+    .illustration {
+        margin-top: 30px;
+    }
+
+    .illustration img {
+        width: 200px;
+    }
+
+    .form-control {
+        font-size: 20px;
+        width: 300px;
+        margin: 10px auto;
+    }
+
+    .form-group {
+        font-size: 30px;
+        margin-bottom: 45px;
+    }
+
+    .search-form {
+        width: 80%;
+        margin: 17px 30px 17px 60px;
+        font-size: 25px;
+        height: 50%;
+    }
+
+    .search-form a {
+        font-size: 20px;
+        padding: 10px 50px;
+    }
+
+    .search-choice {
+        margin-bottom: 25px;
+    }
+
+    .send {
+        padding: 1px 10px;
+    }
+
+    .div.vinyl{
+        height: 300px;
+        width: 300px;
     }
 }

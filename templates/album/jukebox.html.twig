@@ -18,12 +18,11 @@
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
                                 {% for album in albums %}
-                                <audio autoplay="false" id="beep" src="">
+                                <audio id="beep" src="https://lasonotheque.org/UPLOAD/mp3/0566.mp3">
                                 </audio>
                                 <div id="beep">
                                     <a href="{{ path('album_jacket', {'id': album.id}) }}">
-                                        <img class="img mb-4" src="{{ album.image }}" alt="Pochette album"
-                                             onclick="PlaySound()">
+                                        <img class="img mb-4" src="{{ album.image }}" alt="Pochette album" onclick="PlaySound()">
                                     </a>
                                 </div>
                             </div>
@@ -44,7 +43,7 @@
 {% endblock %}
 
 {% block javascripts %}
-<script type="text/javascript">
+<script>
     function PlaySound() {
         var sound = document.getElementById("beep");
         sound.play();
