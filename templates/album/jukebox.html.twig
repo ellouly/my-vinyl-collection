@@ -25,8 +25,8 @@
                                         <img class="img mb-4" src="{{ album.image }}" alt="Pochette album" onclick="PlaySound()">
                                     </a>
                                 </div>
+                                {% endfor %}
                             </div>
-                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -47,6 +47,7 @@
     function PlaySound() {
         var sound = document.getElementById("beep");
         sound.play();
+        browser.pause(3000);
     }
 </script>
 {% endblock %}

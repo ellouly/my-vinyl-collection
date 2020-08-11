@@ -141,16 +141,17 @@ th {
 
 .admin-validate {
     font-family: "Averia Sans Libre", serif;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 5px;
     border: 2px solid;
     border-color: #F29F05;
     box-shadow: 2px 2px 4px #F29F05;
     background-color: whitesmoke;
     text-align: center;
-    width: 45%;
+    width: 40%;
     margin: auto;
     margin-top: 40px;
+    padding: 1px;
 }
 
 .admin-validate a {
@@ -163,7 +164,7 @@ th {
     justify-content: center;
     text-align: center;
     width: 80%;
-    margin: 30px;
+    margin: 10%;
     font-size: 20px;
 }
 
@@ -278,6 +279,15 @@ section.black div.vinyl .label{
 /* -------------------------------------------- */
 /*Jukebox*/
 
+.carousel-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    font-size: 40px;
+}
+
 .carousel.vertical .active {
     top: 0;
 }
@@ -354,6 +364,8 @@ section.black div.vinyl .label{
     color: whitesmoke;
     text-align: center;
     font-size: 20px;
+    width: 90%;
+    margin: auto;
 }
 
 .jacket a {
@@ -361,9 +373,18 @@ section.black div.vinyl .label{
     text-decoration: underline;
 }
 
+.jacket-play {
+    justify-content: center;
+    margin: 20%;
+}
+
 .jukebox {
     justify-content: center;
     align-content: center;
+    width: 80%;
+    height: 80%;
+    margin: 60px auto;
+    overflow: scroll;
 }
 
 .vertical .carousel-inner {
@@ -488,7 +509,7 @@ section.black div.vinyl .label{
     }
 
     .title {
-        padding: 50px;
+        padding: 40px;
     }
 
     .title h1 {
@@ -522,7 +543,6 @@ section.black div.vinyl .label{
         width: 80%;
         margin: 17px 30px 17px 60px;
         font-size: 25px;
-        height: 50%;
     }
 
     .search-form a {
@@ -538,8 +558,29 @@ section.black div.vinyl .label{
         padding: 1px 10px;
     }
 
-    .div.vinyl{
+    .div.vinyl {
         height: 300px;
         width: 300px;
+    }
+
+    .jacket th, td {
+        font-size: 20px;
+    }
+
+    .admin-validate {
+        width: 30%;
+        margin: auto;
+        padding: 3px;
+        font-size: 20px;
+    }
+
+    section.black div.vinyl{
+        margin: 30px;
+    }
+
+    .img {
+        width: 220px;
+        height: 220px;
+        margin: auto;
     }
 }

@@ -22,18 +22,25 @@
                     </tr>
                     </tbody>
                 </table>
+                <div class="row jacket-play">
+                    <iframe scrolling="no" frameborder="0" allowTransparency="true"
+                            src="{{ album.linkAudio }}"
+                            width="200" height="200"></iframe>
+                </div>
             </div>
         </div>
-        <div class="footer">
-            <a href="{{ path('album_jukebox') }}"><i class="las la-record-vinyl"></i></a>
-            <audio autoplay="false" id="beep" src="https://lasonotheque.org/UPLOAD/mp3/0587.mp3">
-            </audio>
-            <div id="beep">
-                <a><audio src="{{ album.linkAudio }}" controls onclick="PlaySound()"><i class="las la-play-circle"></i>
+    </div>
+    <div class="footer justify-content-center">
+        <a href="{{ path('album_jukebox') }}"><i class="las la-record-vinyl"></i></a>
+        <audio autoplay="false" id="beep" src="https://lasonotheque.org/UPLOAD/mp3/0587.mp3">
+        </audio>
+        {# <div id="beep">
+            <a>
+                <audio src="{{ album.linkAudio }}" controls onclick="PlaySound()"><i class="las la-play-circle"></i>
                 </audio>
-                </a>
-            </div>
-        </div>
+            </a>
+        </div>#}
+    </div>
     </div>
 {% endblock %}
 

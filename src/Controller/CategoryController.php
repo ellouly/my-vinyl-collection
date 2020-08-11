@@ -59,6 +59,16 @@ class CategoryController extends AbstractController
     }
 
     /**
+     * @Route("/admin/{id}", name="category_admin_show", methods={"GET"})
+     */
+    public function adminShow(Category $category): Response
+    {
+        return $this->render('category/show.admin.html.twig', [
+            'category' => $category,
+        ]);
+    }
+
+    /**
      * @Route("/{id}/edit", name="category_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Category $category): Response
