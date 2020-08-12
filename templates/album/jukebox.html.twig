@@ -20,7 +20,7 @@
                                 {% for album in albums %}
                                 <audio id="tape" src="https://lasonotheque.org/UPLOAD/mp3/0566.mp3">
                                 </audio>
-                                <div id="tape">
+                                <div class="column" id="tape">
                                     <a href="{{ path('album_jacket', {'id': album.id}) }}">
                                         <img class="img mb-4" src="{{ album.image }}" alt="Pochette album" onclick="PlaySound()">
                                     </a>

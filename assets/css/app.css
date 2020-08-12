@@ -342,6 +342,54 @@ section.black div.vinyl .label{
     top: 0;
 }
 
+.column {
+    margin: 15px 25px 0 25px;
+    padding: 0;
+}
+
+.column:last-child {
+    padding-bottom: 60px;
+}
+
+.column::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.column div {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 150px;
+    margin: 0 0 0 35px;
+    padding: 0;
+}
+
+.column div:first-child {
+    margin-left: 0;
+}
+
+.div {
+    width: 200px;
+    height: 150px;
+    margin: 0;
+    padding: 0;
+    background: #F4F4F4;
+    overflow: hidden;
+}
+
+.zoom div img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.zoom div:hover img {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
 .count {
     border-radius: 50%;
     box-shadow: 5px 5px 10px #F29F05;
@@ -375,7 +423,12 @@ section.black div.vinyl .label{
 
 .jacket-play {
     justify-content: center;
-    margin: 20%;
+    font-size: 80px;
+    margin-top: 15%;
+}
+
+.jacket-play a {
+    color: #F29F05;
 }
 
 .jukebox {
@@ -568,8 +621,9 @@ section.black div.vinyl .label{
     }
 
     .admin-validate {
+        justify-content: center;
+        margin-top: 15%;
         width: 30%;
-        margin: auto;
         padding: 3px;
         font-size: 20px;
     }
@@ -582,5 +636,15 @@ section.black div.vinyl .label{
         width: 220px;
         height: 220px;
         margin: auto;
+    }
+
+    .jacket-play {
+        font-size: 100px;
+        margin-top: 25%;
+    }
+
+    .footer {
+        font-size: 75px;
+        padding: 0px 25px;
     }
 }
