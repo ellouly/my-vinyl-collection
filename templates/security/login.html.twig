@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Disquaire{% endblock %}
+
+{% block body %}
+    <div class="page-container">
+        <div class="container">
+            <form method="post">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                {% if app.user %}
+                    <div class="mb-3">
+                        You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+                    </div>
+                {% endif %}
+
+                <div class="title">
+                    <h1>DISQUAIRE</h1>
+                </div>
+                <div class="illustration">
+                    <img src="{{ asset('build/Disquaire2.png') }}" alt="Record dealer">
+                </div>
+                <div class="row search-form">
+                    <div class="search-choice">
+                        <label for="inputPseudo">Pseudo</label>
+                        <input type="text" value="{{ last_username }}" name="pseudo" id="inputPseudo"
+                               class="form-control"
+                               required autofocus>
+                    </div>
+                    <div class="search-choice">
+                        <label for="inputPassword">Mot de passe</label>
+                        <input type="password" name="password" id="inputPassword" class="form-control" required>
+
+                        <input type="hidden" name="_csrf_token"
+                               value="{{ csrf_token('authenticate') }}">
+                    </div>
+                    <div>
+                        <button class="send" type="submit">Chiner</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="footer">
+            <a href="{{ path('search') }}"><i class="las la-images"></i></a>
+            <a href="{{ path('album_jukebox') }}"><i class="las la-record-vinyl"></i></a>
+        </div>
+    </div>
+{% endblock %}

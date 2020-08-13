@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue !{% endblock %}
+
+{% block body %}
+    <div class="page-container">
+        <div class="container">
+            <div class="title">
+                <h1>Bienvenue</h1>
+            </div>
+            <section class="row black m-1">
+                <div class="vinyl">
+                    <div class="label"></div>
+                    <div class="hole"></div>
+                </div>
+            </section>
+            <div class="row search-form">
+                <div class="search-choice mt-4 ">
+                    <a href="{{ path('album_index') }}">ALBUMS</a>
+                </div>
+                <div class="search-choice mt-5">
+                    <a href="{{ path('artist_index') }}">ARTISTES</a>
+                </div>
+                <div class="search-choice mt-5">
+                    <a href="{{ path('category_index') }}">CATEGORIES</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer justify-content-center">
+            <a class="nav-link" href="{{ path('app_logout') }}"><i class="las la-sign-out-alt"></i></a>
+        </div>
+    </div>
+{% endblock %}

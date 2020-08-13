@@ -12,14 +12,33 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/album")
+ *
  */
 class AlbumController extends AbstractController
 {
+    /**
+     * @Route("/jukebox", name="album_jukebox", methods={"GET"})
+     * @param AlbumRepository $albumRepository
+     * @return Response
+     */
+    public function jukebox(AlbumRepository $albumRepository): Response
+    {
+        $albumsAmount = $this->getDoctrine()
+            ->getRepository(Album::class)
+            ->countAll();
+
+        return $this->render('album/jukebox.html.twig', [
+            'albums' => $albumRepository->sortByArtist(),
+            'amount' => $albumsAmount
+        ]);
+    }
+
     /**
      * @Route("/", name="album_index", methods={"GET"})
      */
     public function index(AlbumRepository $albumRepository): Response
     {
+
         return $this->render('album/index.html.twig', [
             'albums' => $albumRepository->findAll(),
         ]);
@@ -30,6 +49,16 @@ class AlbumController extends AbstractController
      */
     public function new(Request $request): Response
     {
+        $countMax = $this->getDoctrine()
+            ->getRepository(Album::class)
+            ->countAll();
+
+        if ($countMax >= 50){
+            $this->addFlash('Warning', "Votre jukebox est plein !!");
+
+            return $this->redirectToRoute('album_index');
+        }
+
         $album = new Album();
         $form = $this->createForm(AlbumType::class, $album);
         $form->handleRequest($request);
@@ -54,6 +83,16 @@ class AlbumController extends AbstractController
     public function show(Album $album): Response
     {
         return $this->render('album/show.html.twig', [
+            'album' => $album,
+        ]);
+    }
+
+    /**
+     * @Route("/jacket/{id}", name="album_jacket", methods={"GET"})
+     */
+    public function jacket(Album $album): Response
+    {
+        return $this->render('album/jacket.html.twig', [
             'album' => $album,
         ]);
     }

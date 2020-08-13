@@ -1,35 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Artist index{% endblock %}
+{% block title %}Liste des Artistes{% endblock %}
 
 {% block body %}
-    <h1>Artist index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for artist in artists %}
-            <tr>
-                <td>{{ artist.id }}</td>
-                <td>{{ artist.name }}</td>
-                <td>
-                    <a href="{{ path('artist_show', {'id': artist.id}) }}">show</a>
-                    <a href="{{ path('artist_edit', {'id': artist.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('artist_new') }}">Create new</a>
+    <div class="page-container">
+        <div class="admin-container">
+            <div class="title">
+                <h2>LISTE DES ARTISTES</h2>
+            </div>
+            <table class="table jacket">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for artist in artists %}
+                    <tr>
+                        <td>{{ artist.name }}</td>
+                        <td>
+                            <a href="{{ path('artist_show', {'id': artist.id}) }}">Afficher</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3">Pas d'artiste trouvé</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="admin-validate">
+                <a href="{{ path('artist_new') }}">NOUVEL ARTISTE</a>
+            </div>
+        </div>
+            <div class="footer">
+                <a href="{{ path('home_admin') }}"> <i class="las la-home"></i></a>
+                <a class="nav-link" href="{{ path('app_logout') }}"><i class="las la-sign-out-alt"></i></a>
+            </div>
+        </div>
 {% endblock %}

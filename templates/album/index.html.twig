@@ -1,43 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Album index{% endblock %}
+{% block title %}Liste des Albums{% endblock %}
 
 {% block body %}
-    <h1>Album index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Year</th>
-                <th>Image</th>
-                <th>Titles</th>
-                <th>LinkAudio</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for album in albums %}
-            <tr>
-                <td>{{ album.id }}</td>
-                <td>{{ album.name }}</td>
-                <td>{{ album.year }}</td>
-                <td>{{ album.image }}</td>
-                <td>{{ album.titles }}</td>
-                <td>{{ album.linkAudio }}</td>
-                <td>
-                    <a href="{{ path('album_show', {'id': album.id}) }}">show</a>
-                    <a href="{{ path('album_edit', {'id': album.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('album_new') }}">Create new</a>
+    <div class="page-container">
+        <div class="admin-container">
+            <div class="title">
+                <h2>LISTE DES ALBUMS</h2>
+            </div>
+            <table class="table jacket">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for album in albums %}
+                    <tr>
+                        <td>{{ album.name }}</td>
+                        <td>
+                            <a href="{{ path('album_show', {'id': album.id}) }}">Afficher</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="7">Pas d'album trouvé</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="admin-validate">
+                <a href="{{ path('album_new') }}">NOUVEL ALBUM</a>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="{{ path('home_admin') }}"> <i class="las la-home"></i></a>
+            <a class="nav-link" href="{{ path('app_logout') }}"><i class="las la-sign-out-alt"></i></a>
+        </div>
+    </div>
 {% endblock %}
