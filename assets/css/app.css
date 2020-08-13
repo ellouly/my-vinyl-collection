@@ -107,6 +107,7 @@ th {
 
 .illustration img {
     width: 140px;
+    box-shadow: 5px 5px 10px #8FA2B3;
 }
 
 .title {
@@ -170,7 +171,20 @@ th {
 
 /* -------------------------------------------- */
 /* -------------------------------------------- */
-/* Home page admin*/
+/* Home page */
+
+.home-title {
+    color: #8FA2B3;
+    font-family: 'Love Ya Like A Sister', cursive;
+    text-align: center;
+    padding: 50px 50px 0px;
+
+}
+
+.home-title h1 {
+    font-size: 50px;
+    border-bottom: none;
+}
 
 div.vinyl{
     -webkit-animation: turn 5s linear infinite;
@@ -178,11 +192,11 @@ div.vinyl{
     background: url(https://assets.codepen.io/141041/vinyl.png);
     background-size: 300% 100%;
     border: 0.2em solid black;
-    border-radius: 5em;
+    border-radius: 7em;
     box-sizing: border-box;
-    height: 10em;
+    height: 14em;
     position: relative;
-    width: 10em;
+    width: 14em;
 }
 
 div.vinyl .hole{
@@ -211,11 +225,12 @@ section{
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    height: 70%;
 }
 
 section.black div.vinyl{
     background-position: 200% 0;
-    border-color: whitesmoke;
+    border-color: #8FA2B3;
     background-color: black;
 }
 
@@ -224,7 +239,7 @@ section.black div.vinyl .hole{
 }
 
 section.black div.vinyl .label{
-    background: whitesmoke;
+    background: #8FA2B3;
 }
 
 @-webkit-keyframes turn{
@@ -247,22 +262,9 @@ section.black div.vinyl .label{
 
 /* -------------------------------------------- */
 /* -------------------------------------------- */
-/* Home page */
+/* Home page admin*/
 
-.home-title {
-    color: #8FA2B3;
-    font-family: 'Love Ya Like A Sister', cursive;
-    text-align: center;
-    padding: 50px 50px 0px;
-
-}
-
-.home-title h1 {
-    font-size: 50px;
-    border-bottom: none;
-}
-
-.home-disc {
+.home-admin-disc {
     text-align: center;
     flex: 1;
     display: flex;
@@ -270,9 +272,9 @@ section.black div.vinyl .label{
     justify-content: center;
 }
 
-.home-disc img {
-    width: 250px;
-    height: 250px;
+.home-admin-disc img {
+    width: 150px;
+    height: 150px;
 }
 
 /* -------------------------------------------- */
@@ -345,8 +347,8 @@ section.black div.vinyl .label{
 .carousel.vertical img.inline-photo {
     -webkit-transform: scale(0.8);
     transform: scale(0.8);
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
+    -webkit-transition: .1s ease-in-out;
+    transition: .1s ease-in-out;
 }
 
 .carousel.vertical img.inline-photo.is-visible {
@@ -370,7 +372,7 @@ section.black div.vinyl .label{
     width: 150px;
     height: 150px;
     margin: auto;
-    box-shadow: 5px 5px 10px #F29F05;
+    box-shadow: 5px 5px 5px whitesmoke;
 }
 
 .jacket {
@@ -516,9 +518,10 @@ section.black div.vinyl .label{
         font-size: 80px;
     }
 
-    .home-disc img {
-        width: 400px;
-        height: 400px;
+    .home-admin-disc img {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 20px;
     }
 
     .count {
@@ -544,6 +547,7 @@ section.black div.vinyl .label{
 
     .illustration img {
         width: 200px;
+
     }
 
     .form-control {
@@ -576,11 +580,6 @@ section.black div.vinyl .label{
         padding: 1px 10px;
     }
 
-    .div.vinyl {
-        height: 300px;
-        width: 300px;
-    }
-
     .jacket th, td {
         font-size: 20px;
     }
@@ -611,5 +610,11 @@ section.black div.vinyl .label{
     .footer {
         font-size: 75px;
         padding: 0px 25px;
+    }
+
+    div.vinyl {
+        border-radius: 10em;
+        height: 20em;
+        width: 20em;
     }
 }

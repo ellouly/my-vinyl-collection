@@ -5,10 +5,16 @@
         <div class="home-title">
             <h1>MY VINYL COLLECTION</h1>
         </div>
-
-        <div class="home-disc">
-            <a href="{{ path('album_jukebox') }}"><img src="{{ asset('build/discos-de-acetato-png-5.png') }}"></a>
-        </div>
+        <section class="row black m-1">
+            <div>
+                <a href="{{ path('album_jukebox') }}">
+                    <div class="vinyl">
+                        <div class="label"></div>
+                        <div class="hole"></div>
+                    </div>
+                </a>
+            </div>
+        </section>
         <div class="footer">
             <a href="{{ path('search') }}"><i class="las la-images"></i></a>
             <a href="{{ path('app_login') }}"><i class="las la-headphones-alt"></i></a>

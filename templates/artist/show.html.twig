@@ -12,7 +12,7 @@
                 <h2>Albums</h2>
                 <ul>
                     {% for album in artist.albums %}
-                        <h3><a href="{{ path('album_show',{'id':album.id}) }}">{{ album.name }}</a></h3>
+                        <h3><a href="{{ path('album_jacket',{'id':album.id}) }}">{{ album.name }}</a></h3>
                     {% endfor %}
                 </ul>
             </div>
