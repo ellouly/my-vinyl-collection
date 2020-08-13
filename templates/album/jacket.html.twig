@@ -23,30 +23,34 @@
                     </tbody>
                 </table>
                 <div class="row jacket-play">
-                    <a href="{{ album.linkAudio }}"><i class="las la-play-circle"></i></a>
+                    <a href="{{ album.linkAudio }}" controls onclick="PlaySound(event)"><i class="las la-play-circle"></i></a>
                 </div>
             </div>
         </div>
     </div>
     <div class="footer justify-content-center">
         <a href="{{ path('album_jukebox') }}"><i class="las la-record-vinyl"></i></a>
-        <audio autoplay="false" id="beep" src="https://lasonotheque.org/UPLOAD/mp3/0587.mp3">
+        <audio id="vinyl" src="https://lasonotheque.org/UPLOAD/mp3/0587.mp3">
         </audio>
-        {# <div id="beep">
-            <a>
-                <audio src="{{ album.linkAudio }}" controls onclick="PlaySound()"><i class="las la-play-circle"></i>
+        <div>
+            {#<a>
+                <audio src="{{ album.linkAudio }}" controls onclick="PlaySound(event)"><i class="las la-play-circle"></i>
                 </audio>
-            </a>
-        </div>#}
+            </a> #}
+        </div>
     </div>
     </div>
 {% endblock %}
 
 {% block javascripts %}
-    <script type="text/javascript">
-        function PlaySound() {
-            var sound = document.getElementById("beep");
+    <script>
+        function PlaySound(event) {
+            event.preventDefault();
+            var sound = document.getElementById("vinyl");
             sound.play();
+            setTimeout(function(){
+                window.location=event.target.parentNode.href;
+            }, 2000);
         }
     </script>
 {% endblock %}
