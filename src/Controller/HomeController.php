@@ -12,7 +12,7 @@ class HomeController extends AbstractController
     /**
      * @Route("/home", name="home_index")
      */
-    public function index() :Response
+    public function index(): Response
     {
         return $this->render('home.html.twig');
     }
@@ -20,7 +20,7 @@ class HomeController extends AbstractController
     /**
      * @Route("/admin", name="home_admin")
      */
-    public function homeAdmin() :Response
+    public function homeAdmin(): Response
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
 

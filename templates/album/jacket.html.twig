@@ -23,7 +23,8 @@
                     </tbody>
                 </table>
                 <div class="row jacket-play">
-                    <a href="{{ album.linkAudio }}" controls onclick="PlaySound(event)"><i class="las la-play-circle"></i></a>
+                    <a href="{{ album.linkAudio }}" onclick="PlaySound(event)"><i
+                                class="las la-play-circle"></i></a>
                 </div>
             </div>
         </div>
@@ -33,7 +34,7 @@
         <audio id="vinyl" src="https://lasonotheque.org/UPLOAD/mp3/0587.mp3">
         </audio>
         <div>
-            {#<a>
+            {# <a>
                 <audio src="{{ album.linkAudio }}" controls onclick="PlaySound(event)"><i class="las la-play-circle"></i>
                 </audio>
             </a> #}
@@ -48,8 +49,8 @@
             event.preventDefault();
             var sound = document.getElementById("vinyl");
             sound.play();
-            setTimeout(function(){
-                window.location=event.target.parentNode.href;
+            setTimeout(function () {
+                window.location = event.target.parentNode.href;
             }, 2000);
         }
     </script>

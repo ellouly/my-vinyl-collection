@@ -75,7 +75,7 @@ th {
     overflow: scroll;
 }
 
-.page-container{
+.page-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -186,7 +186,9 @@ th {
     border-bottom: none;
 }
 
-div.vinyl{
+/* Vinyl */
+
+div.vinyl {
     -webkit-animation: turn 5s linear infinite;
     animation: turn 5s linear infinite;
     background: url(https://assets.codepen.io/141041/vinyl.png);
@@ -199,7 +201,7 @@ div.vinyl{
     width: 14em;
 }
 
-div.vinyl .hole{
+div.vinyl .hole {
     background: white;
     border-radius: 100%;
     height: 0.4em;
@@ -210,7 +212,7 @@ div.vinyl .hole{
     width: 0.4em;
 }
 
-div.vinyl .label{
+div.vinyl .label {
     background: black;
     border-radius: 100%;
     height: 35%;
@@ -221,44 +223,46 @@ div.vinyl .label{
     width: 35%;
 }
 
-section{
+section {
     align-items: center;
     flex-direction: column;
     justify-content: center;
     height: 70%;
 }
 
-section.black div.vinyl{
+section.black div.vinyl {
     background-position: 200% 0;
     border-color: #8FA2B3;
     background-color: black;
 }
 
-section.black div.vinyl .hole{
+section.black div.vinyl .hole {
     background: black;
 }
 
-section.black div.vinyl .label{
+section.black div.vinyl .label {
     background: #8FA2B3;
 }
 
-@-webkit-keyframes turn{
-    0%{
+@-webkit-keyframes turn {
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+    100% {
         transform: rotate(360deg);
     }
 }
 
-@keyframes turn{
-    0%{
+@keyframes turn {
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+    100% {
         transform: rotate(360deg);
     }
 }
+
+/* --------------*/
 
 /* -------------------------------------------- */
 /* -------------------------------------------- */
@@ -280,6 +284,8 @@ section.black div.vinyl .label{
 /* -------------------------------------------- */
 /* -------------------------------------------- */
 /*Jukebox*/
+
+/*Carousel*/
 
 .carousel-form {
     display: flex;
@@ -347,14 +353,20 @@ section.black div.vinyl .label{
 .carousel.vertical img.inline-photo {
     -webkit-transform: scale(0.8);
     transform: scale(0.8);
-    -webkit-transition: .1s ease-in-out;
-    transition: .1s ease-in-out;
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
 }
 
 .carousel.vertical img.inline-photo.is-visible {
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
 }
+
+.vertical .carousel-inner {
+    height: 100%;
+}
+
+/* --------------*/
 
 .count {
     border-radius: 50%;
@@ -405,10 +417,6 @@ section.black div.vinyl .label{
     height: 80%;
     margin: 60px auto;
     overflow: scroll;
-}
-
-.vertical .carousel-inner {
-    height: 100%;
 }
 
 /* -------------------------------------------- */
@@ -514,14 +522,12 @@ section.black div.vinyl .label{
 
 @media only screen and (min-device-width: 768px) {
 
-    .home-title h1 {
-        font-size: 80px;
-    }
-
-    .home-admin-disc img {
-        width: 250px;
-        height: 250px;
-        margin-bottom: 20px;
+    .admin-validate {
+        justify-content: center;
+        margin-top: 15%;
+        width: 30%;
+        padding: 3px;
+        font-size: 20px;
     }
 
     .count {
@@ -529,25 +535,15 @@ section.black div.vinyl .label{
         width: 13%;
     }
 
-    .title {
-        padding: 40px;
+    div.vinyl {
+        border-radius: 10em;
+        height: 20em;
+        width: 20em;
     }
 
-    .title h1 {
-        font-size: 60px;
-    }
-
-    .title h2 {
-        font-size: 40px;
-    }
-
-    .illustration {
-        margin-top: 30px;
-    }
-
-    .illustration img {
-        width: 200px;
-
+    .footer {
+        font-size: 75px;
+        padding: 0px 25px;
     }
 
     .form-control {
@@ -561,6 +557,44 @@ section.black div.vinyl .label{
         margin-bottom: 45px;
     }
 
+    .home-admin-disc img {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 20px;
+    }
+
+    .home-title h1 {
+        font-size: 80px;
+    }
+
+    .illustration {
+        margin-top: 30px;
+    }
+
+    .illustration img {
+        width: 200px;
+
+    }
+
+    .img {
+        width: 220px;
+        height: 220px;
+        margin: auto;
+    }
+
+    .jacket th, td {
+        font-size: 20px;
+    }
+
+    .jacket-play {
+        font-size: 100px;
+        margin-top: 25%;
+    }
+
+    .search-choice {
+        margin-bottom: 25px;
+    }
+
     .search-form {
         width: 80%;
         margin: 17px 30px 17px 60px;
@@ -572,49 +606,23 @@ section.black div.vinyl .label{
         padding: 10px 50px;
     }
 
-    .search-choice {
-        margin-bottom: 25px;
+    section.black div.vinyl {
+        margin: 30px;
     }
 
     .send {
         padding: 1px 10px;
     }
 
-    .jacket th, td {
-        font-size: 20px;
+    .title {
+        padding: 40px;
     }
 
-    .admin-validate {
-        justify-content: center;
-        margin-top: 15%;
-        width: 30%;
-        padding: 3px;
-        font-size: 20px;
+    .title h1 {
+        font-size: 60px;
     }
 
-    section.black div.vinyl{
-        margin: 30px;
-    }
-
-    .img {
-        width: 220px;
-        height: 220px;
-        margin: auto;
-    }
-
-    .jacket-play {
-        font-size: 100px;
-        margin-top: 25%;
-    }
-
-    .footer {
-        font-size: 75px;
-        padding: 0px 25px;
-    }
-
-    div.vinyl {
-        border-radius: 10em;
-        height: 20em;
-        width: 20em;
+    .title h2 {
+        font-size: 40px;
     }
 }

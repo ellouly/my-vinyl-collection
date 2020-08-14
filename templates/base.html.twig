@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}MY VINYL COLLECTION{% endblock %}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-    </head>
-
-    <body>
-    {% block body %}{% endblock %}
-    {% block nav %}{% endblock %}
-    {% block footer %}{% endblock %}
-    </body>
-
-    {% block javascripts %}
-        {{ encore_entry_script_tags('app') }}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}MY VINYL COLLECTION{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
     {% endblock %}
+</head>
+
+<body>
+{% block body %}{% endblock %}
+{% block nav %}{% endblock %}
+{% block footer %}{% endblock %}
+</body>
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
 </html>

@@ -93,7 +93,7 @@ class ArtistController extends AbstractController
      */
     public function delete(Request $request, Artist $artist): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$artist->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $artist->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($artist);
             $entityManager->flush();
