@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jukebox{% endblock %}
+
+{% block body %}
+    <div class="page-container">
+        <div class="container">
+            <div class="title">
+                <h1>JUKEBOX</h1>
+            </div>
+            <div class="jukebox" onscroll="loop()">
+                <div class="row justify justify-content-center">
+
+                    <div id="carousel-example-generic" class="carousel slide vertical carousel-form"
+                         data-ride="carousel">
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <audio id="tape" src="https://lasonotheque.org/UPLOAD/mp3/0566.mp3">
+                                </audio>
+                                {% for album in albums %}
+                                    <div>
+                                        <a href="{{ path('album_jacket', {'id': album.id}) }}">
+                                            <img class="img mb-4 inline-photo show-on-scroll" src="{{ album.image }}"
+                                                 alt="Pochette album" onclick="PlaySound(event)">
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="{{ path('search') }}"><i class="las la-images"></i></a>
+            <div class="count">
+                {{ amount }}
+            </div>
+            <a href="{{ path('app_login') }}"><i class="las la-headphones-alt"></i></a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        function PlaySound(event) {
+            event.preventDefault();
+            var sound = document.getElementById("tape");
+            sound.play();
+            setTimeout(function () {
+                window.location = event.target.parentNode.href;
+            }, 3500);
+        }
+    </script>
+    <script>
+        // Detect request animation frame
+        var scroll = window.requestAnimationFrame ||
+            // IE Fallback
+            function (callback) {
+                window.setTimeout(callback, 1000 / 60)
+            };
+        var elementsToShow = document.querySelectorAll('.show-on-scroll');
+
+        function loop() {
+
+            Array.prototype.forEach.call(elementsToShow, function (element) {
+                if (isElementInViewport(element)) {
+                    element.classList.add('is-visible');
+                } else {
+                    element.classList.remove('is-visible');
+                }
+            });
+
+            scroll(loop);
+        }
+
+        // Helper function from: http://stackoverflow.com/a/7557433/274826
+        function isElementInViewport(el) {
+            // special bonus for those using jQuery
+            if (typeof jQuery === "function" && el instanceof jQuery) {
+                el = el[0];
+            }
+            var rect = el.getBoundingClientRect();
+            var jukebox = document.querySelector(".container");
+
+            var jukeboxRect = jukebox.getBoundingClientRect();
+            var middle = (jukeboxRect.top + jukeboxRect.bottom) / 2;
+
+            return (
+                rect.top < middle && rect.bottom > middle
+            );
+        }
+
+        // Call the loop for the first time
+        loop();
+
+    </script>
+{% endblock %}

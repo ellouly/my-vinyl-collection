@@ -1,42 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Album{% endblock %}
+{% block title %}{{ album.name }}{% endblock %}
 
 {% block body %}
-    <h1>Album</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ album.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ album.name }}</td>
-            </tr>
-            <tr>
-                <th>Year</th>
-                <td>{{ album.year }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ album.image }}</td>
-            </tr>
-            <tr>
-                <th>Titles</th>
-                <td>{{ album.titles }}</td>
-            </tr>
-            <tr>
-                <th>LinkAudio</th>
-                <td>{{ album.linkAudio }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('album_index') }}">back to list</a>
-
-    <a href="{{ path('album_edit', {'id': album.id}) }}">edit</a>
-
-    {{ include('album/_delete_form.html.twig') }}
+    <div class="page-container">
+        <div class="admin-container">
+            <div class="title">
+                <h2>{{ album.name }}</h2>
+            </div>
+            <table class="table jacket">
+                <tbody>
+                <tr>
+                    <th>Artiste</th>
+                    <td>{{ album.artist.name }}</td>
+                </tr>
+                <tr>
+                    <th>Année</th>
+                    <td>{{ album.year }}</td>
+                </tr>
+                <tr>
+                    <th>Pochette</th>
+                    <td>{{ album.image }}</td>
+                </tr>
+                <tr>
+                    <th>Lien Audio</th>
+                    <td>{{ album.linkAudio }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="footer">
+            <a href="{{ path('album_index') }}"><i class="las la-arrow-circle-left"></i></a>
+            <a href="{{ path('album_edit', {'id': album.id}) }}"><i class="las la-user-edit"></i></a>
+            {{ include('album/_delete_form.html.twig') }}
+        </div>
+    </div>
 {% endblock %}

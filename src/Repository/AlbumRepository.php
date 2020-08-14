@@ -19,6 +19,21 @@ class AlbumRepository extends ServiceEntityRepository
         parent::__construct($registry, Album::class);
     }
 
+    public function countAll()
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->select('COUNT(a)');
+        return $qb->getQuery()->getSingleScalarResult();
+    }
+
+    public function sortByArtist()
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->leftJoin('a.artist', 'ar')
+            ->orderBy('ar.name', 'ASC');
+        return $qb->getQuery()->getResult();
+    }
+
     // /**
     //  * @return Album[] Returns an array of Album objects
     //  */

@@ -59,6 +59,16 @@ class ArtistController extends AbstractController
     }
 
     /**
+     * @Route("/admin/{id}", name="artist_admin_show", methods={"GET"})
+     */
+    public function adminShow(Artist $artist): Response
+    {
+        return $this->render('artist/show.admin.html.twig', [
+            'artist' => $artist,
+        ]);
+    }
+
+    /**
      * @Route("/{id}/edit", name="artist_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Artist $artist): Response
@@ -83,7 +93,7 @@ class ArtistController extends AbstractController
      */
     public function delete(Request $request, Artist $artist): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$artist->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $artist->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($artist);
             $entityManager->flush();
