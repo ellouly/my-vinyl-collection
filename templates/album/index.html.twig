@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des Artistes{% endblock %}
+{% block title %}Liste des Albums{% endblock %}
 
 {% block body %}
     <div class="page-container">
         <div class="admin-container">
             <div class="title">
-                <h2>LISTE DES ARTISTES</h2>
+                <h2>LISTE DES ALBUMS</h2>
             </div>
             <table class="table jacket">
                 <thead>
@@ -16,22 +16,22 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% for artist in artists %}
+                {% for album in albums %}
                     <tr>
-                        <td>{{ artist.name }}</td>
+                        <td>{{ album.name }}</td>
                         <td>
-                            <a href="{{ path('artist_show', {'id': artist.id}) }}">Afficher</a>
+                            <a href="{{ path('album_show', {'id': album.id}) }}">Afficher</a>
                         </td>
                     </tr>
                 {% else %}
                     <tr>
-                        <td colspan="3">Pas d'artiste trouvé</td>
+                        <td colspan="7">Pas d'album trouvé</td>
                     </tr>
                 {% endfor %}
                 </tbody>
             </table>
             <div class="admin-validate">
-                <a href="{{ path('artist_new') }}">NOUVEL ARTISTE</a>
+                <a href="{{ path('album_new') }}">NOUVEL ALBUM</a>
             </div>
         </div>
         <div class="footer">

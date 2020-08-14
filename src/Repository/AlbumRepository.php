@@ -26,6 +26,14 @@ class AlbumRepository extends ServiceEntityRepository
         return $qb->getQuery()->getSingleScalarResult();
     }
 
+    public function sortByArtist()
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->leftJoin('a.artist', 'ar')
+            ->orderBy('ar.name', 'ASC');
+        return $qb->getQuery()->getResult();
+    }
+
     // /**
     //  * @return Album[] Returns an array of Album objects
     //  */

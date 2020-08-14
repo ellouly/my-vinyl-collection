@@ -35,11 +35,6 @@ class Album
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $titles;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $linkAudio;
 
     /**
@@ -91,18 +86,6 @@ class Album
     public function setImage(string $image): self
     {
         $this->image = $image;
-
-        return $this;
-    }
-
-    public function getTitles(): ?string
-    {
-        return $this->titles;
-    }
-
-    public function setTitles(string $titles): self
-    {
-        $this->titles = $titles;
 
         return $this;
     }

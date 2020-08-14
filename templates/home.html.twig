@@ -1,20 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="home-vinyl">
+    <div class="page-container">
         <div class="home-title">
             <h1>MY VINYL COLLECTION</h1>
         </div>
-
-        <div class="vinyl">
-            <a href="{{ path('album_index') }}"><img src="{{ asset('build/discos-de-acetato-png-5.png') }}"></a>
-        </div>
-        <div class="count">
-            {{ albums }}
-        </div>
+        <section class="row black m-1">
+            <div>
+                <a href="{{ path('album_jukebox') }}">
+                    <div class="vinyl">
+                        <div class="label"></div>
+                        <div class="hole"></div>
+                    </div>
+                </a>
+            </div>
+        </section>
         <div class="footer">
             <a href="{{ path('search') }}"><i class="las la-images"></i></a>
-            <a href="{{ path('record_dealer') }}"><i class="las la-headphones-alt"></i></a>
+            <a href="{{ path('app_login') }}"><i class="las la-headphones-alt"></i></a>
         </div>
     </div>
 {% endblock %}

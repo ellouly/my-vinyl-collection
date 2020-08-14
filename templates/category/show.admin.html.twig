@@ -13,15 +13,17 @@
                 <ul>
                     {% for album in category.albums %}
                         <div class="mt-4">
-                            <h3><a href="{{ path('album_jacket',{'id':album.id}) }}">{{ album.name }}</a></h3>
+                            <h3><a href="{{ path('album_show',{'id':album.id}) }}">{{ album.name }}</a></h3>
                         </div>
-                        <p>({{ album.artist.name }})</p>
                     {% endfor %}
+
                 </ul>
             </div>
         </div>
-        <div class="footer justify-content-center">
-            <a href="{{ path('search') }}"><i class="las la-arrow-circle-left"></i></a>
+        <div class="footer">
+            <a href="{{ path('category_index') }}"><i class="las la-arrow-circle-left"></i></a>
+            <a href="{{ path('category_edit', {'id': category.id}) }}"><i class="las la-user-edit"></i></a>
+            <a href="{{ path('home_admin') }}"> <i class="las la-home"></i></a>
         </div>
     </div>
 {% endblock %}
