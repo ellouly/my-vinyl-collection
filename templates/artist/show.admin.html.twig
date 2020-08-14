@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ artist.name }}{% endblock %}
+
+{% block body %}
+    <div class="page-container">
+        <div class="row container-show">
+            <div class="title">
+                <h1>{{ artist.name }}</h1>
+            </div>
+            <div class="album-form">
+                <h2>Albums</h2>
+                <ul>
+                    {% for album in artist.albums %}
+                        <h3><a href="{{ path('album_show',{'id':album.id}) }}">{{ album.name }}</a></h3>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="{{ path('artist_index') }}"><i class="las la-arrow-circle-left"></i></a>
+            <a href="{{ path('artist_edit', {'id': artist.id}) }}"><i class="las la-user-edit"></i></a>
+            <a href="{{ path('home_admin') }}"> <i class="las la-home"></i></a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,6 @@
+<form method="post" action="{{ path('artist_delete', {'id': artist.id}) }}"
+      onsubmit="return confirm('Es-tu sûr de trouver cet artiste has been ?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ artist.id) }}">
+    <button class="btn-delete"><i class="las la-trash-alt"></i></button>
+</form>

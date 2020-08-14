@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ album.name }}{% endblock %}
+
+{% block body %}
+    <div class="page-container">
+        <div class="container">
+            <div class="title">
+                <h2>{{ album.name }}</h2>
+            </div>
+            <div>
+                <table class="table jacket">
+                    <tbody>
+                    <tr>
+                        <td>{{ album.artist.name }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ album.year }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ album.category.name }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="row jacket-play">
+                    <a href="{{ album.linkAudio }}" onclick="PlaySound(event)"><i
+                                class="las la-play-circle"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer justify-content-center">
+        <a href="{{ path('album_jukebox') }}"><i class="las la-record-vinyl"></i></a>
+        <audio id="vinyl" src="https://lasonotheque.org/UPLOAD/mp3/0587.mp3">
+        </audio>
+        <div>
+            {# <a>
+                <audio src="{{ album.linkAudio }}" controls onclick="PlaySound(event)"><i class="las la-play-circle"></i>
+                </audio>
+            </a> #}
+        </div>
+    </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        function PlaySound(event) {
+            event.preventDefault();
+            var sound = document.getElementById("vinyl");
+            sound.play();
+            setTimeout(function () {
+                window.location = event.target.parentNode.href;
+            }, 2000);
+        }
+    </script>
+{% endblock %}

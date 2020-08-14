@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvel Artiste{% endblock %}
+
+{% block body %}
+    <div class="page-container">
+        <div class="admin-container">
+            <div class="title">
+                <h1>NOUVEL ARTISTE</h1>
+            </div>
+            <div class="jukebox">
+                <div class="row admin-widget">
+                    {{ include('artist/_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="{{ path('artist_index') }}"><i class="las la-arrow-circle-left"></i></a>
+            <a class="nav-link" href="{{ path('app_logout') }}"><i class="las la-sign-out-alt"></i></a>
+        </div>
+    </div>
+{% endblock %}

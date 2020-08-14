@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block body %}
+    <div class="page-container">
+        <div class="row container-show">
+            <div class="title">
+                <h1>{{ category.name }}</h1>
+            </div>
+            <div class="album-form">
+                <h2>Albums</h2>
+                <ul>
+                    {% for album in category.albums %}
+                        <div class="mt-4">
+                            <h3><a href="{{ path('album_jacket',{'id':album.id}) }}">{{ album.name }}</a></h3>
+                        </div>
+                        <p>({{ album.artist.name }})</p>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="footer justify-content-center">
+            <a href="{{ path('search') }}"><i class="las la-arrow-circle-left"></i></a>
+        </div>
+    </div>
+{% endblock %}

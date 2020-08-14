@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Catégories{% endblock %}
+
+{% block body %}
+    <div class="page-container">
+        <div class="admin-container">
+            <div class="title">
+                <h2>LISTE DES CATEGORIES</h2>
+            </div>
+            <table class="table jacket">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for category in categories %}
+                    <tr>
+                        <td>{{ category.name }}</td>
+                        <td>
+                            <a href="{{ path('category_admin_show', {'id': category.id}) }}">Afficher</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3">Pas de catégorie trouvée</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="admin-validate">
+                <a href="{{ path('category_new') }}">NOUVELLE CATEGORIE</a>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="{{ path('home_admin') }}"> <i class="las la-home"></i></a>
+            <a class="nav-link" href="{{ path('app_logout') }}"><i class="las la-sign-out-alt"></i></a>
+        </div>
+    </div>
+{% endblock %}

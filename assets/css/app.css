@@ -1,3 +1,628 @@
+@import url(https://fonts.googleapis.com/css2?family=Averia+Sans+Libre&family=Love+Ya+Like+A+Sister&family=Oswald&display=swap);
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* Global */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
-    background-color: lightgray;
+    background: linear-gradient(135deg, #212626 40%, #F27405);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: 'Love Ya Like A Sister', cursive;
+    border-bottom: 2px solid whitesmoke;
+}
+
+td {
+    font-family: 'Averia Sans Libre', serif;
+    font-size: 15px;
+}
+
+th {
+    font-family: 'Oswald', serif;
+    font-size: 15px;
+}
+
+.btn-validate {
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px whitesmoke;
+    color: whitesmoke;
+    background-color: #8FA2B3;
+    font-size: 40px;
+}
+
+.btn-delete {
+    font-size: 60px;
+    justify-content: space-between;
+    background: none;
+    border: none;
+}
+
+.send {
+    font-family: "Averia Sans Libre", serif;
+    font-size: 25px;
+    border-radius: 7px;
+    border: 2px solid;
+    border-color: #F29F05;
+    box-shadow: 3px 3px 5px #F29F05;
+    color: #707F8C;
+    background-color: whitesmoke;
+    text-align: center;
+    margin-top: 40px;
+    padding: 1px 5px;
+}
+
+.container {
+    background: #212626;
+    color: ghostwhite;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    width: 80%;
+    height: 80%;
+    margin: 70px auto 20px;
+    border: 3px solid;
+    border-color: #F29F05;
+    border-radius: 30px;
+    box-shadow: 10px 10px 15px #F29F05;
+    overflow: scroll;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+}
+
+.footer {
+    font-size: 60px;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer a {
+    color: #8FA2B3;
+}
+
+.footer button {
+    color: #8FA2B3;
+}
+
+.illustration {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.illustration img {
+    width: 140px;
+    box-shadow: 5px 5px 10px #8FA2B3;
+}
+
+.title {
+    color: ghostwhite;
+    font-family: 'Love Ya Like A Sister', cursive;
+    text-align: center;
+    padding: 30px;
+}
+
+.title h1 {
+    font-size: 40px;
+}
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* Administration*/
+
+.admin-container {
+    background: #212626;
+    color: ghostwhite;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    width: 90%;
+    height: 90%;
+    margin: 20px auto;
+    border: 3px solid;
+    border-color: #F29F05;
+    border-radius: 30px;
+    overflow: scroll;
+}
+
+.admin-validate {
+    font-family: "Averia Sans Libre", serif;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid;
+    border-color: #F29F05;
+    box-shadow: 2px 2px 4px #F29F05;
+    background-color: whitesmoke;
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    margin-top: 40px;
+    padding: 1px;
+}
+
+.admin-validate a {
+    color: #707F8C;
+}
+
+.admin-widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    margin: 10%;
+    font-size: 20px;
+}
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* Home page */
+
+.home-title {
+    color: #8FA2B3;
+    font-family: 'Love Ya Like A Sister', cursive;
+    text-align: center;
+    padding: 50px 50px 0px;
+
+}
+
+.home-title h1 {
+    font-size: 50px;
+    border-bottom: none;
+}
+
+/* Vinyl */
+
+div.vinyl {
+    -webkit-animation: turn 5s linear infinite;
+    animation: turn 5s linear infinite;
+    background: url(https://assets.codepen.io/141041/vinyl.png);
+    background-size: 300% 100%;
+    border: 0.2em solid black;
+    border-radius: 7em;
+    box-sizing: border-box;
+    height: 14em;
+    position: relative;
+    width: 14em;
+}
+
+div.vinyl .hole {
+    background: white;
+    border-radius: 100%;
+    height: 0.4em;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    width: 0.4em;
+}
+
+div.vinyl .label {
+    background: black;
+    border-radius: 100%;
+    height: 35%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    width: 35%;
+}
+
+section {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 70%;
+}
+
+section.black div.vinyl {
+    background-position: 200% 0;
+    border-color: #8FA2B3;
+    background-color: black;
+}
+
+section.black div.vinyl .hole {
+    background: black;
+}
+
+section.black div.vinyl .label {
+    background: #8FA2B3;
+}
+
+@-webkit-keyframes turn {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes turn {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* --------------*/
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* Home page admin*/
+
+.home-admin-disc {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-admin-disc img {
+    width: 150px;
+    height: 150px;
+}
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/*Jukebox*/
+
+/*Carousel*/
+
+.carousel-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    font-size: 40px;
+}
+
+.carousel.vertical .active {
+    top: 0;
+}
+
+.carousel.vertical .active img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.carousel.vertical .active.left {
+    top: -400px;
+}
+
+.carousel.vertical .active.right {
+    top: 400px;
+}
+
+.carousel.vertical .carousel-control {
+    width: 100%;
+    bottom: inherit;
+    top: inherit;
+}
+
+.carousel.vertical .carousel-control.left {
+    top: 0;
+}
+
+.carousel.vertical .item {
+    -webkit-transition: 0.6s ease-in-out top;
+    -moz-transition: 0.6s ease-in-out top;
+    -ms-transition: 0.6s ease-in-out top;
+    -o-transition: 0.6s ease-in-out top;
+    transition: 0.6s ease-in-out top;
+}
+
+.carousel.vertical .item {
+    left: 0;
+}
+
+.carousel.vertical .next {
+    top: 400px;
+}
+
+.carousel.vertical .prev {
+    top: -400px;
+}
+
+.carousel.vertical .next.left,
+.carousel.vertical .prev.right {
+    top: 0;
+}
+
+.carousel.vertical img.inline-photo {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+}
+
+.carousel.vertical img.inline-photo.is-visible {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.vertical .carousel-inner {
+    height: 100%;
+}
+
+/* --------------*/
+
+.count {
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px #F29F05;
+    color: #F29F05;
+    background-color: #212626;
+    font-size: 35px;
+    text-align: center;
+    width: 17%;
+    margin: auto;
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
+.img {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    box-shadow: 5px 5px 5px whitesmoke;
+}
+
+.jacket {
+    color: whitesmoke;
+    text-align: center;
+    font-size: 20px;
+    width: 90%;
+    margin: auto;
+}
+
+.jacket a {
+    color: whitesmoke;
+    text-decoration: underline;
+}
+
+.jacket-play {
+    justify-content: center;
+    font-size: 80px;
+    margin-top: 15%;
+}
+
+.jacket-play a {
+    color: #F29F05;
+}
+
+.jukebox {
+    justify-content: center;
+    align-content: center;
+    width: 80%;
+    height: 80%;
+    margin: 60px auto;
+    overflow: scroll;
+}
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/*Record dealer*/
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/*Search view*/
+
+.form-control {
+    font-family: Oswald, serif;
+    font-size: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #8FA2B3;
+    color: #707F8C;
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+.form-group {
+    font-family: Averia Sans Libre, serif;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    margin: 17px 30px;
+    font-size: 20px;
+}
+
+.search-form a {
+    font-family: Oswald, serif;
+    font-size: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #8FA2B3;
+    color: #707F8C;
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 10px 50px;
+}
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/*Search results*/
+
+.album-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    margin: 25px;
+    font-size: 60px;
+    overflow: scroll;
+}
+
+.album-form h2 {
+    font-size: 37px;
+    font-family: 'Averia Sans Libre', serif;
+    padding-bottom: 20px;
+}
+
+.album-form h3 {
+    font-size: 20px;
+    font-family: 'Oswald', serif;
+    padding-bottom: 20px;
+}
+
+.album-form p {
+    font-size: 15px;
+}
+
+.album-form a {
+    color: whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.container-show {
+    background: #212626;
+    color: ghostwhite;
+    justify-content: center;
+    align-content: flex-start;
+    position: relative;
+    width: 80%;
+    height: 80%;
+    margin: 70px auto 20px;
+    border: 3px solid;
+    border-color: #F29F05;
+    border-radius: 30px;
+    box-shadow: 10px 10px 15px #F29F05;
+    overflow: scroll;
+}
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* Tablet Version */
+
+@media only screen and (min-device-width: 768px) {
+
+    .admin-validate {
+        justify-content: center;
+        margin-top: 15%;
+        width: 30%;
+        padding: 3px;
+        font-size: 20px;
+    }
+
+    .count {
+        font-size: 55px;
+        width: 13%;
+    }
+
+    div.vinyl {
+        border-radius: 10em;
+        height: 20em;
+        width: 20em;
+    }
+
+    .footer {
+        font-size: 75px;
+        padding: 0px 25px;
+    }
+
+    .form-control {
+        font-size: 20px;
+        width: 300px;
+        margin: 10px auto;
+    }
+
+    .form-group {
+        font-size: 30px;
+        margin-bottom: 45px;
+    }
+
+    .home-admin-disc img {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 20px;
+    }
+
+    .home-title h1 {
+        font-size: 80px;
+    }
+
+    .illustration {
+        margin-top: 30px;
+    }
+
+    .illustration img {
+        width: 200px;
+
+    }
+
+    .img {
+        width: 220px;
+        height: 220px;
+        margin: auto;
+    }
+
+    .jacket th, td {
+        font-size: 20px;
+    }
+
+    .jacket-play {
+        font-size: 100px;
+        margin-top: 25%;
+    }
+
+    .search-choice {
+        margin-bottom: 25px;
+    }
+
+    .search-form {
+        width: 80%;
+        margin: 17px 30px 17px 60px;
+        font-size: 25px;
+    }
+
+    .search-form a {
+        font-size: 20px;
+        padding: 10px 50px;
+    }
+
+    section.black div.vinyl {
+        margin: 30px;
+    }
+
+    .send {
+        padding: 1px 10px;
+    }
+
+    .title {
+        padding: 40px;
+    }
+
+    .title h1 {
+        font-size: 60px;
+    }
+
+    .title h2 {
+        font-size: 40px;
+    }
 }
