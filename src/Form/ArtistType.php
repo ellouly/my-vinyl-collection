@@ -15,8 +15,7 @@ class ArtistType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'label' => "Nom de l'artiste"
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

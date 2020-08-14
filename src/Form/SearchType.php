@@ -31,15 +31,14 @@ class SearchType extends AbstractType
                 'required' => false,
                 'placeholder' => 'Piocher un artiste',
                 'choice_value' => function ($artist) use ($router) {
-                if ($artist)
-                    return $router->generate('artist_show', ['id'=>$artist->getId()]);
-                else
-                    return '';
+                    if ($artist)
+                        return $router->generate('artist_show', ['id' => $artist->getId()]);
+                    else
+                        return '';
                 },
                 'attr' => [
                     'onchange' => 'location = this.options[this.selectedIndex].value;'
                 ],
-
             ])
             ->add('category', EntityType::class, [
                 'label' => 'Catégorie',
@@ -48,10 +47,10 @@ class SearchType extends AbstractType
                 'required' => false,
                 'placeholder' => 'Fouiller une catégorie',
                 'choice_value' => function ($category) use ($router) {
-                if ($category)
-                    return $router->generate('category_show', ['id'=>$category->getId()]);
-                else
-                    return '';
+                    if ($category)
+                        return $router->generate('category_show', ['id' => $category->getId()]);
+                    else
+                        return '';
                 },
                 'attr' => [
                     'onchange' => 'location = this.options[this.selectedIndex].value;'

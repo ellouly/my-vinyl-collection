@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Form\RecordDealerType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class RecordDealerController extends AbstractController
@@ -19,7 +18,7 @@ class RecordDealerController extends AbstractController
         $form->handleRequest($request);
 
         return $this->render('record_dealer.html.twig', [
-            'form'=> $form->createView()
+                'form' => $form->createView()
             ]
         );
     }
