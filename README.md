@@ -12,7 +12,7 @@ Symfony 5, Webpack Encore
 
 Here is the wireframe edited with MokeFlow:
 
-![Wireframe.png]()
+![Wireframe.png](https://github.com/ellouly/my-vinyl-collection/blob/master/assets/images/HomePage.png)
 
 ## How to set up the Project¶
 
