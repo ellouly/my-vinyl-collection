@@ -12,7 +12,7 @@ Symfony 5, Webpack Encore
 
 Here is the wireframe edited with MokeFlow:
 
-![Wireframe.png](https://s3.amazonaws.com/assets.mockflow.com/app/wireframepro/company/C863afff9e49f64ea10e35b760f560d5d/projects/M748651f8bca21acc21fea14cbbb112831591796355280/pages/75b4fc1376a24c4db118aa94659139be/image/75b4fc1376a24c4db118aa94659139be.png)
+![Wireframe.png]()
 
 ## How to set up the Project¶
 
