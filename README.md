@@ -10,15 +10,18 @@ HTML5, CSS3, Bootstrap,
 PHP7, Doctrine,  
 Symfony 5, Webpack Encore
 
-Here is the wireframe edited with MokeFlow:
+Here is the home page:
 
-![Wireframe.png](https://raw.githubusercontent.com/ellouly/Wild-Series/master/assets/images/Wireframe%20Wild-series.png)
+![Wireframe.png](https://github.com/ellouly/my-vinyl-collection/blob/master/assets/images/HomePage.png)
 
 ## How to set up the Project¶
 
 You only need to get the project code and install the dependencies with Composer.  
 And follow this command:
-https://github.com/ellouly/my-vinyl-collection.git  
+
+```
+git clone https://github.com/ellouly/my-vinyl-collection.git  
+```
 
 Then run those commands:
 ```
